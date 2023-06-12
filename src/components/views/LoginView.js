@@ -47,7 +47,7 @@ const LoginView = () => {
       <Stack alignItems="center">
         <HorizontalStack alignItems="end"  sx={{ textDecoration: 'none' ,marginBottom:10 }}  component={Link}  to={"/"}>
           <Box >
-          <img src="/Logo.svg" alt="Image" width={50} />
+          <img src="./Logo.svg" alt="Image" width={50} />
           </Box>
           <Typography
             variant="h3"
