@@ -7,6 +7,7 @@ import {
   Stack,
   TextField,
 } from "@mui/material";
+import {IoSend} from "react-icons/io5"
 import React, { useEffect, useState } from "react";
 import { sendMessage } from "../api/messages";
 import { isLoggedIn } from "../helpers/authHelper";
@@ -26,7 +27,7 @@ const SendMessage = (props) => {
         m: 2,
         height: "40px",
       }}
-      justifyContent="center"
+      justifyContent="space-between"
     >
       <HorizontalStack>
         <TextField
@@ -36,6 +37,7 @@ const SendMessage = (props) => {
           value={content}
           autoComplete="off"
           size="small"
+          
           onKeyPress={(e) => {
             if (e.key === "Enter" && content.length > 0) {
               handleSendMessage();
@@ -43,8 +45,8 @@ const SendMessage = (props) => {
           }}
         />
 
-        <Button onClick={handleSendMessage} disabled={content.length === 0}>
-          Send
+        <Button  onClick={handleSendMessage} disabled={content.length === 0}>
+          <IoSend size={25}></IoSend>
         </Button>
       </HorizontalStack>
     </Stack>

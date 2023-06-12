@@ -171,7 +171,7 @@ const Messages = (props) => {
           <HorizontalStack
             alignItems="center"
             spacing={2}
-            sx={{ px: 2, height: "60px" }}
+            sx={{ height: "60px" }}
           >
             {props.mobile && (
               <IconButton
