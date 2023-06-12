@@ -15,7 +15,7 @@ const UserMessengerEntries = (props) => {
           <HorizontalStack
             alignItems="center"
             spacing={2}
-            sx={{ px: 2, height: "60px" }}
+            sx={{ height: "60px" }}
             color="#566376"
           >
             <AiFillMessage size={30} />

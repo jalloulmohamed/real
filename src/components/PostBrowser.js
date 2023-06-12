@@ -116,7 +116,7 @@ const PostBrowser = (props) => {
 
   return (
     <>
-      <Stack spacing={2}>
+      <Stack  padding={0}  >
         <Card sx={{ border: 'none' , padding: 0  }}>
           <HorizontalStack justifyContent="space-between">
             {/* <SortBySelect

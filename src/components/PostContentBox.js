@@ -14,7 +14,6 @@ const PostContentBox = (props) => {
       {clickable && !editing ? (
         <Box
           sx={{
-            padding: theme.spacing(2),
             width: "92%",
             "&:hover": { backgroundColor: "#fff", cursor: "pointer" },
           }}
@@ -22,7 +21,7 @@ const PostContentBox = (props) => {
           {props.children}
         </Box>
       ) : (
-        <Box sx={{ padding: theme.spacing(2), width: "90%" }}>
+        <Box sx={{ padding:0 ,paddingLeft:"10px", paddingRight:"10px" , width: "100%" }}>
           {props.children}
         </Box>
       )}

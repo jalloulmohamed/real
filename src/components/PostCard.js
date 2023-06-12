@@ -93,7 +93,7 @@ const PostCard = (props) => {
 
   return (
     <Card sx={{ padding: 0 ,border:"none"  }} className="post-card">
-      <Box className={preview}>
+      <Box padding={0} className={preview}>
         <HorizontalStack spacing={0} alignItems="initial">
           <Stack
             justifyContent="space-between "
@@ -102,7 +102,8 @@ const PostCard = (props) => {
             sx={{
               // backgroundColor: "grey.100",
               width: "50px",
-              padding: theme.spacing(1),
+              
+              
               
             }}
           >
@@ -172,7 +173,7 @@ const PostCard = (props) => {
                   <Markdown content={post.content} />
                 </Box>
               ))}
-            <HorizontalStack sx={{ mt: 1 , } }>
+            <HorizontalStack sx={{ mt: 1 , mb:3} }>
                 <HorizontalStack onClick={() => navigate("/posts/" + post._id)} >
                   <AiFillMessage size={21} color="#D9D9D9" />
                   <Typography

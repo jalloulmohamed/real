@@ -17,7 +17,7 @@ const ExploreView = () => {
   return (
     <Container>
       <Navbar />
-      <GridLayout
+      <GridLayout 
         left={<PostBrowser createPost contentType="posts" />}
         right={<Sidebar />}
       />

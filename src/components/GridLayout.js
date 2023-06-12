@@ -5,8 +5,8 @@ const GridLayout = (props) => {
   const { left, right } = props;
 
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={12} md={8}>
+    <Grid container   spacing={2}>
+      <Grid item  xs={12} md={8}>
         {left}
       </Grid>
       <Grid  item md={4} sx={{ display: { xs: "none", md: "block" },borderLeft:"1px solid #f1f0ec" }}>

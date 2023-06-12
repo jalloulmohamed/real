@@ -26,7 +26,7 @@ const UserMessengerEntry = (props) => {
     <>
       <MenuItem
         onClick={handleClick}
-        sx={{ padding: 1 , margin:1 , borderRadius:1}}
+        sx={{ py: 1  , my:1 , borderRadius:1}}
         
        
       >

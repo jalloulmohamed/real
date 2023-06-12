@@ -105,7 +105,7 @@ const MessengerView = () => {
                 item
                 xs={12}
                 sx={{
-                  borderRight: 1,
+                 
                   borderColor: "divider",
                   height: "100%",
                 }}

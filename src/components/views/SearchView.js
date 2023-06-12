@@ -12,8 +12,8 @@ const SearchView = () => {
       <Navbar />
       <GridLayout
         left={
-          <Stack spacing={2}>
-            <PostBrowser createPost contentType="posts" />
+          <Stack >
+            <PostBrowser createPost  contentType="posts" />
           </Stack>
         }
         right={<Sidebar />}

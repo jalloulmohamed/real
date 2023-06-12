@@ -94,7 +94,7 @@ const LoginView = () => {
           />
 
           <ErrorAlert error={serverError} />
-          <Button type="submit" fullWidth variant="contained" sx={{ my: 2  , backgroundColor:"#566376" ,'&:hover':{ backgroundColor:"#566376", } }}>
+          <Button type="submit" fullWidth variant="contained" sx={{ py:"14px", my: 2  , backgroundColor:"#566376" ,'&:hover':{ backgroundColor:"#566376", } }}>
             Login
           </Button>
         </Box>
