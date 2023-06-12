@@ -19,11 +19,13 @@ import {
   AiFillMessage,
   AiOutlineSearch,
 } from "react-icons/ai";
+import {IoSearchOutline} from "react-icons/io5"
 import { Link, useNavigate } from "react-router-dom";
 import { isLoggedIn, logoutUser } from "../helpers/authHelper";
 import UserAvatar from "./UserAvatar";
 import HorizontalStack from "./util/HorizontalStack";
 import { FiLogOut } from "react-icons/fi";
+import reactDom from "react-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -81,7 +83,7 @@ const Navbar = () => {
       >
         <HorizontalStack alignItems="end"  sx={{ textDecoration: 'none' }}  component={Link}  to={"/"}>
           <Box >
-          <img src="/logo.svg" alt="Image" width={20} />
+          <img src="/logo.svg" alt="Image" width={26} />
           </Box>
           <Typography
             sx={{ display: mobile ? "none" : "block" }}
@@ -109,23 +111,23 @@ const Navbar = () => {
         <HorizontalStack>
           {mobile && (
             <IconButton onClick={handleSearchIcon}>
-              <AiOutlineSearch />
+              <IoSearchOutline size={24} color="#566376"/>
             </IconButton>
           )}
 
           {/* <IconButton component={Link}  to={"/"}>
-            <AiFillHome size={20} color="#A5A7B4" />
+            <AiFillHome size={20} color="#566376" />
           </IconButton> */}
           {user ? (
             <>
               <IconButton component={Link} to={"/messenger"}>
-                <AiFillMessage size={22} color="#A5A7B4" />
+                <AiFillMessage size={24} color="#566376" />
               </IconButton>
               <IconButton onClick={handleLogout}>
-                <FiLogOut size={20} color="#A5A7B4" ></FiLogOut>
+                <FiLogOut size={22} color="#566376" ></FiLogOut>
               </IconButton>
               <IconButton component={Link}  to={"/users/" + username}>
-                <UserAvatar width={30} height={30} username={user.username} />
+                <UserAvatar width={38} height={38} username={user.username} />
               </IconButton>
             </>
           ) : (
