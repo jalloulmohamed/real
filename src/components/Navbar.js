@@ -81,7 +81,7 @@ const Navbar = () => {
       >
         <HorizontalStack alignItems="end"  sx={{ textDecoration: 'none' }}  component={Link}  to={"/"}>
           <Box >
-          <img src="https://real-one.vercel.app/logo.svg" alt="Image" width={20} />
+          <img src="/img/Logo.svg" alt="Image" width={20} />
           </Box>
           <Typography
             sx={{ display: mobile ? "none" : "block" }}

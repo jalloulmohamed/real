@@ -75,7 +75,7 @@ const SignupView = () => {
       <Stack alignItems="center">
         <HorizontalStack alignItems="end"  sx={{ textDecoration: 'none' ,marginBottom:10 }}  component={Link}  to={"/"}>
           <Box >
-          <img src="https://real-one.vercel.app/logo.svg" alt="Image" width={50} />
+          <img src="/img/Logo.svg" alt="Image" width={50} />
           </Box>
           <Typography
             variant="h3"
