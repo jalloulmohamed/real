@@ -1,4 +1,4 @@
-let BASE_URL = "https://real-eosin.vercel.app";
+let BASE_URL = "https://reality-7ea1.onrender.com";
 if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
   BASE_URL = "http://localhost:4000/";
 }
