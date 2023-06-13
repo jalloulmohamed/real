@@ -174,7 +174,7 @@ const PostCard = (props) => {
                   <Markdown content={post.content} />
                 </Box>
               ))}
-              <img src="/1.JPG" style={{width:"100%"  ,marginTop:"10px", borderRadius:"10px"}}></img>
+              {/* <img src="/1.JPG" style={{width:"100%"  ,marginTop:"10px", borderRadius:"10px"}}></img> */}
             <HorizontalStack sx={{ mt: 1 , mb:3} }>
                 <HorizontalStack onClick={() => navigate("/posts/" + post._id)} >
                   <AiFillMessage size={21} color="#D9D9D9" />
