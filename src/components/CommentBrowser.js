@@ -57,17 +57,17 @@ const CommentBrowser = (props) => {
   };
 
   return (
-    <Stack spacing={2}>
-      <Card>
+    <Stack   spacing={2}>
+      {/* <Card>
         <SortBySelect onSortBy={handleSortBy} sortBy={sortBy} sorts={sorts} />
-      </Card>
+      </Card> */}
       {loading ? (
         <Loading />
       ) : (
         <>
           {comments &&
             comments.map((comment) => (
-              <Comment key={comment._id} comment={comment} profile />
+              <Comment  key={comment._id} comment={comment} profile />
             ))}
 
           <Stack py={5} alignItems="center">

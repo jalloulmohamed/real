@@ -14,7 +14,7 @@ import { MdCancel } from "react-icons/md";
 import { BiReply, BiTrash } from "react-icons/bi";
 import { BsReply, BsReplyFill } from "react-icons/bs";
 import Moment from "react-moment";
-
+import UserAvatar from "./UserAvatar";
 const Comment = (props) => {
   const theme = useTheme();
   const iconColor = theme.palette.primary.main;
@@ -58,10 +58,10 @@ const Comment = (props) => {
   };
 
   let style = {
-    backgroundColor: theme.palette.grey[100],
     borderRadius: 1.5,
-    mb: theme.spacing(2),
-    padding: theme.spacing(0),
+    marginTop:"5px",
+    marginBottom:"5px",
+
   };
 
   if (depth % 2 === 1) {
@@ -72,16 +72,18 @@ const Comment = (props) => {
     <Box sx={style}>
       <Box
         sx={{
-          pl: theme.spacing(2),
-          pt: theme.spacing(1),
-          pb: theme.spacing(1),
           pr: 1,
         }}
       >
         {props.profile ? (
           <Box>
             <Typography variant="h6">
-              <Link underline="hover" to={"/posts/" + comment.post._id}>
+              <Link  style={{
+            color:"#FDC04D",
+            fontWeight: 'bold',
+            fontSize:"14px",
+            textDecoration: 'none',
+          }} underline="hover" to={"/posts/" + comment.post._id}>
                 {comment.post.title}
               </Link>
             </Typography>
@@ -93,6 +95,7 @@ const Comment = (props) => {
         ) : (
           <HorizontalStack justifyContent="space-between">
             <HorizontalStack>
+              <UserAvatar width={30} height={30} username={comment.commenter.username} />
               <ContentDetails
                 username={comment.commenter.username}
                 createdAt={comment.createdAt}
@@ -151,7 +154,7 @@ const Comment = (props) => {
         )}
 
         {!minimised && (
-          <Box sx={{ mt: 1 }} overflow="hidden">
+          <Box sx={{ mt: 1  ,color:"#868686" ,}} overflow="hidden">
             {!editing ? (
               <Markdown content={comment.content} />
             ) : (
@@ -162,7 +165,7 @@ const Comment = (props) => {
             )}
 
             {replying && !minimised && (
-              <Box sx={{ mt: 2 }}>
+              <Box sx={{ mt: 1 }}>
                 <CommentEditor
                   comment={comment}
                   addComment={addComment}
@@ -172,7 +175,7 @@ const Comment = (props) => {
               </Box>
             )}
             {comment.children && (
-              <Box sx={{ pt: theme.spacing(2) }}>
+              <Box sx={{ backgroundColor:"#EEEEE",pt: theme.spacing(2) }}>
                 {comment.children.map((reply, i) => (
                   <Comment
                     key={reply._id}
