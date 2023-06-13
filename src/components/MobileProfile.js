@@ -62,9 +62,9 @@ const MobileProfile = (props) => {
             {currentUser && user._id === currentUser.userId && (
               <IconButton onClick={props.handleEditing} sx={{ mr: 1 }}>
                 {props.editing ? (
-                  <MdCancel color={"#4A92FF"} />
+                  <MdCancel color={"#FDC04D"} />
                 ) : (
-                  <AiFillEdit color={"#4A92FF"} />
+                  <AiFillEdit color={"#FDC04D"} />
                 )}
               </IconButton>
             )}
@@ -87,7 +87,7 @@ const MobileProfile = (props) => {
             )}
             {currentUser && user._id !== currentUser.userId && (
               <Box sx={{ mt: 2 }}>
-                <Button variant="" sx={{color:"#4A92FF", ml: 1}}  s={{border: "1px solid #fff"}}  onClick={props.handleMessage}>
+                <Button variant="" sx={{color:"#FDC04D", ml: 1}}  s={{border: "1px solid #fff"}}  onClick={props.handleMessage}>
                   Send Message
                 </Button>
               </Box>

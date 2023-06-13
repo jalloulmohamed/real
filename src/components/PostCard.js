@@ -25,8 +25,8 @@ import Markdown from "./Markdown";
 
 import "./postCard.css";
 import { MdCancel } from "react-icons/md";
-import { BiTrash } from "react-icons/bi";
-import { BsReplyFill } from "react-icons/bs";
+import { HiOutlineTrash } from "react-icons/hi";
+import { FiEdit2 } from "react-icons/fi";
 import UserAvatar from "./UserAvatar";
 
 const PostCard = (props) => {
@@ -44,6 +44,7 @@ const PostCard = (props) => {
   const [confirm, setConfirm] = useState(false);
   const [post, setPost] = useState(postData);
   const [likeCount, setLikeCount] = useState(post.likeCount);
+  const [isHovered, setIsHovered] = useState(false);
 
   let maxHeight = null;
   if (preview === "primary") {
@@ -91,7 +92,13 @@ const PostCard = (props) => {
       await unlikePost(post._id, user);
     }
   };
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
 
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
   return (
     <Card sx={{ padding: 0 ,border:"none"  }} className="post-card">
       <Box padding={0} className={preview}>
@@ -111,6 +118,7 @@ const PostCard = (props) => {
           <UserAvatar width={40} height={40} username={post.poster.username} />
           </Stack>
           <PostContentBox    post={post} editing={editing}>
+
             <HorizontalStack justifyContent="space-between">
               <ContentDetails
                 username={post.poster.username}
@@ -120,33 +128,50 @@ const PostCard = (props) => {
               />
               <Box>
                 {user && (isAuthor || user.isAdmin) && preview !== "secondary" && (
-                  <HorizontalStack>
-                    <FiMoreHorizontal color={"#FDC04D"} size={25}></FiMoreHorizontal>
-                    {/* <IconButton
-                      disabled={loading}
-                      size="small"
-                      onClick={handleEditPost}
+                  <Stack sx={{position:"relative", zIndex:100}} onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}>
+                    <FiMoreHorizontal 
+                      color={"#FDC04D"} 
+                      size={25}
+                      cursor={"pointer"}
+                    >
+                    </FiMoreHorizontal>
+                    {isHovered &&(
+                       <Stack sx={{position:"absolute",
+                        borderRadius:"50px", 
+                        px:"10px", 
+                        py:"1px", 
+                        boxShadow:"rgba(0, 0, 0, 0.16) 0px 1px 4px", 
+                        display:"flex" , 
+                        flexDirection:"row",
+                        top:"20px", 
+                        right:"2px"}} >
+                      <IconButton
+                        disabled={loading}
+                        size="small"
+                        onClick={handleEditPost}
                       
-                     
-                    >
-                      {editing ? (
-                        <MdCancel  color={"#FDC04D"} />
-                      ) : (
-                        <AiFillEdit  color={"#FDC04D"} />
-                      )}
-                    </IconButton>
-                    <IconButton
-                      disabled={loading}
-                      size="small"
-                      onClick={handleDeletePost}
-                    >
-                      {confirm ? (
-                        <AiFillCheckCircle  color={"#FDC04D"} />
-                      ) : (
-                        <BiTrash  color={"#FDC04D"} />
-                      )}
-                    </IconButton> */}
-                  </HorizontalStack>
+                      >
+                        {editing ? (
+                          <MdCancel   color={"#666666"} />
+                        ) : (
+                          <FiEdit2  color={"#666666"} />
+                        )}
+                      </IconButton>
+                      <IconButton
+                        disabled={loading}
+                        size="small"
+                        onClick={handleDeletePost}
+                      >
+                        {confirm ? (
+                          <AiFillCheckCircle  color={"#666666"} />
+                        ) : (
+                          <HiOutlineTrash size={20} color={"#666666"} />
+                        )}
+                      </IconButton>
+                      </Stack>
+                    )}
+                  </Stack>
                 )}
               </Box>
             </HorizontalStack>
@@ -154,7 +179,7 @@ const PostCard = (props) => {
             <Typography
               
               gutterBottom
-              sx={{ fontWeight: 'bold' ,fontSize:"13px", overflow: "hidden", mt: 1, maxHeight: 125, color:"#FDC04D" }}
+              sx={{ fontWeight: 'bold' ,fontSize:"13px", overflow: "hidden", mt: 1, zIndex:10,maxWidth :"70%", color:"#FDC04D" }}
               className="title"
             >
               {post.title}
@@ -175,7 +200,7 @@ const PostCard = (props) => {
                   <Markdown content={post.content} />
                 </Box>
               ))}
-              {/* <img src={"https://robohash.org/" + post.title + "?set=set5"} style={{width:"100%"  ,marginTop:"10px", borderRadius:"10px"}}></img> */}
+              <img src={"/2.png" + post.title + "?set=set5"} style={{width:"100%"  ,marginTop:"10px", borderRadius:"10px"}}></img>
             <HorizontalStack  sx={{ mt:1,mb:3} }  >
                 <HorizontalStack  onClick={() => navigate("/posts/" + post._id)} >
                   <AiFillMessage size={21} color="#D9D9D9" />
