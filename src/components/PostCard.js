@@ -93,11 +93,11 @@ const PostCard = (props) => {
     }
   };
   const handleMouseEnter = () => {
-    setIsHovered(true);
+    setIsHovered(!isHovered);
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false);
+    setIsHovered(!isHovered);
   };
   return (
     <Card sx={{ padding: 0 ,border:"none"  }} className="post-card">
