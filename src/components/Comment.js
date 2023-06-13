@@ -61,6 +61,7 @@ const Comment = (props) => {
     borderRadius: 1.5,
     marginTop:"5px",
     marginBottom:"5px",
+    display:"flex"
 
   };
 
@@ -70,9 +71,10 @@ const Comment = (props) => {
 
   return (
     <Box sx={style}>
+      <UserAvatar  width={30} height={30} username={comment.commenter.username} />
       <Box
         sx={{
-          pr: 1,
+          px: 1,
         }}
       >
         {props.profile ? (
@@ -95,7 +97,6 @@ const Comment = (props) => {
         ) : (
           <HorizontalStack justifyContent="space-between">
             <HorizontalStack>
-              <UserAvatar width={30} height={30} username={comment.commenter.username} />
               <ContentDetails
                 username={comment.commenter.username}
                 createdAt={comment.createdAt}
