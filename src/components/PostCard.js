@@ -5,6 +5,7 @@ import {
   Stack,
   Typography,
   useTheme,
+  Divider
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
@@ -174,9 +175,9 @@ const PostCard = (props) => {
                   <Markdown content={post.content} />
                 </Box>
               ))}
-              {/* <img src="/1.JPG" style={{width:"100%"  ,marginTop:"10px", borderRadius:"10px"}}></img> */}
-            <HorizontalStack sx={{ mt: 1 , mb:3} }>
-                <HorizontalStack onClick={() => navigate("/posts/" + post._id)} >
+              {/* <img src={"https://robohash.org/" + post.title + "?set=set5"} style={{width:"100%"  ,marginTop:"10px", borderRadius:"10px"}}></img> */}
+            <HorizontalStack  sx={{ mt:1,mb:3} }  >
+                <HorizontalStack  onClick={() => navigate("/posts/" + post._id)} >
                   <AiFillMessage size={21} color="#D9D9D9" />
                   <Typography
                     variant="subtitle2"
