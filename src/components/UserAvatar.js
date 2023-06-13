@@ -9,7 +9,7 @@ const UserAvatar = ({ username, height, width }) => {
         width: width,
         backgroundColor: "lightgray",
       }}
-      src={"https://robohash.org/" + username}
+      src={"https://api.multiavatar.com/" + username}
     />
   );
 };
