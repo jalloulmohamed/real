@@ -21,7 +21,7 @@ const PostContentBox = (props) => {
           {props.children}
         </Box>
       ) : (
-        <Box sx={{ padding:0 ,paddingLeft:"10px", paddingRight:"10px" , width: "100%" }}>
+        <Box sx={{ padding:0 ,paddingLeft:"10px" , width: "100%" }}>
           {props.children}
         </Box>
       )}

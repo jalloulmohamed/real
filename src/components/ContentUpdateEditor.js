@@ -32,9 +32,8 @@ const ContentUpdateEditor = (props) => {
         <TextField
           value={content}
           fullWidth
-          margin="normal"
           name="content"
-          sx={{ backgroundColor: "white", fontSize:"14px" }}
+          sx={{ backgroundColor: "white", fontSize:"10px" }}
           onChange={handleChange}
           error={error.length !== 0}
           helperText={error}
