@@ -72,6 +72,7 @@ const PostCard = (props) => {
     e.stopPropagation();
 
     setEditing(!editing);
+    
   };
 
   const handleSubmit = async (e) => {
@@ -81,6 +82,7 @@ const PostCard = (props) => {
     await updatePost(post._id, isLoggedIn(), { content });
     setPost({ ...post, content, edited: true });
     setEditing(false);
+    setIsHovered(!isHovered);
   };
 
   const handleLike = async (liked) => {
