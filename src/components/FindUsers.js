@@ -64,7 +64,7 @@ const FindUsers = () => {
                 <Typography>{user.username}</Typography>
               </HorizontalStack>
               <Link to={"/users/" + user.username} style={{
-            color:"#FDC04D",
+            color:"#4a92ff",
             fontSize: 15,
             textDecoration: 'none',
             '&:hover': {
