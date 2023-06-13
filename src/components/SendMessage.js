@@ -40,7 +40,7 @@ const SendMessage = (props) => {
           value={content}
           autoComplete="off"
           size="small"
-          InputProps={{ sx: {  borderRadius: 10 } }}
+          InputProps={{ sx: {  borderRadius: 10 , width:"100%" } }}
           
           
           onKeyPress={(e) => {
@@ -50,7 +50,7 @@ const SendMessage = (props) => {
           }}
         />
 
-        <Button  sx={{margin:0,color:"#FDC04D"  ,padding:0}} onClick={handleSendMessage} disabled={content.length === 0}>
+        <Button  sx={{margin:0 ,color:"#FDC04D" ,padding:0}} onClick={handleSendMessage} disabled={content.length === 0}>
           <IoSend size={25}></IoSend>
         </Button>
       </HorizontalStack>
