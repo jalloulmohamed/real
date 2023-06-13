@@ -151,9 +151,9 @@ const PostCard = (props) => {
             </HorizontalStack>
 
             <Typography
-              variant="h6"
+              
               gutterBottom
-              sx={{ overflow: "hidden", mt: 1, maxHeight: 125 }}
+              sx={{ fontWeight: 'bold' ,fontSize:"14px", overflow: "hidden", mt: 1, maxHeight: 125,  color:"#FDC04D"}}
               className="title"
             >
               {post.title}
