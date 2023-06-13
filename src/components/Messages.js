@@ -176,7 +176,8 @@ const Messages = (props) => {
                 md: '20px',
                 xs: '0',
               }, 
-              mb:2 
+              my:2
+
             }}
           >
             {props.mobile && (
@@ -204,12 +205,15 @@ const Messages = (props) => {
             </Typography>
           </HorizontalStack>
           
-          <Box sx={{ height: "calc(100vh - 200px)" }}>
-            <Box sx={{ height: "100%" }}>
+          <Box >
+            <Box >
               <Stack
                 sx={{ padding: 2, overflowY: "auto", '&::-webkit-scrollbar': { display: 'none' },
                 msOverflowStyle: 'none',
-                scrollbarWidth: 'none',maxHeight: "100%" }}
+                scrollbarWidth: 'none',height:{
+                 xs: "calc(100vh - 120px)",
+                 md:"calc(100vh - 210px)",
+                }  }}
                 direction="column-reverse"
               >
                 <div ref={messagesEndRef} />

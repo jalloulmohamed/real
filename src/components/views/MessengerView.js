@@ -63,12 +63,11 @@ const MessengerView = () => {
 
   return (
     <Container>
-      <Navbar />
+      { (!mobile || !conservant)  && <Navbar />}
       <Box >
         <Card sx={{ padding: 0 ,border:0 }}>
           <Grid
             container
-            sx={{ height: "calc(100vh - 90px)" }}
             alignItems="stretch"
           >
             {!mobile ? (
