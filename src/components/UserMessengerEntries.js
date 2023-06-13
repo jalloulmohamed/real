@@ -56,7 +56,7 @@ const UserMessengerEntries = (props) => {
       )}
     </>
   ) : (
-    <Stack sx={{ height: "100%" }} justifyContent="center">
+    <Stack sx={{ height:"80vh"}} justifyContent="center">
       <Loading />
     </Stack>
   );

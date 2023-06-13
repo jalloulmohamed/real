@@ -210,6 +210,7 @@ const Messages = (props) => {
               <Stack
                 sx={{ padding: 2, overflowY: "auto", '&::-webkit-scrollbar': { display: 'none' },
                 msOverflowStyle: 'none',
+                backgroundColor:"#FFF5",
                 scrollbarWidth: 'none',height:{
                  xs: "calc(100vh - 120px)",
                  md:"calc(100vh - 210px)",
@@ -231,14 +232,14 @@ const Messages = (props) => {
           {scrollToBottom()}
         </>
       ) : (
-        <Stack sx={{ height: "100%" }} justifyContent="center">
+        <Stack sx={{ height:"80vh"}} justifyContent="center">
           <Loading />
         </Stack>
       )}
     </>
   ) : (
     <Stack
-      sx={{ height: "100%" }}
+      sx={{ height:"80vh"}}
       justifyContent="center"
       alignItems="center"
       spacing={2}
