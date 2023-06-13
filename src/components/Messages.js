@@ -246,9 +246,9 @@ const Messages = (props) => {
       color="#FDC04D"
     >
       <AiFillMessage size={80} />
-      <Typography variant="h5">PostIt Messenger</Typography>
+      <Typography variant="h5">Real Chat</Typography>
       <Typography color="text.secondary">
-        Privately message other users on PostIt
+        Privately message other users on Real
       </Typography>
     </Stack>
   );
