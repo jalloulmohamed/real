@@ -30,66 +30,65 @@ const MobileProfile = (props) => {
   }, [props.profile]);
 
   return (
-    <Card sx={{ display: { sm: "block", md: "none" }, mb: 2 }}>
+    <Card sx={{ border:0 , display: { sm: "block", md: "none" }, mb: 2 }}>
       {user ? (
-        <Stack spacing={2}>
-          <HorizontalStack spacing={2} justifyContent="space-between">
+        <Stack >
+          <HorizontalStack   justifyContent="space-between">
             <HorizontalStack>
-              <UserAvatar width={50} height={50} username={user.username} />
-              <Typography variant="h6" textOverflow="ellipses">
-                {user.username}
-              </Typography>
+              <UserAvatar width={80} height={80} username={user.username} />
             </HorizontalStack>
 
-            <Box sx={{ display: { xs: "none", sm: "block" } }}>
-              <HorizontalStack spacing={3}>
-                <Stack alignItems="center">
-                  <Typography>Likes</Typography>
-                  <Typography color="text.secondary">
+            <Box sx={{ display: { sm: "block" } }}>
+              <HorizontalStack spacing={2}>
+              <HorizontalStack spacing={1}>
+                  <Typography color="#A5A7B4" > Likes</Typography>
+                  <Typography color="#566376">
                     <b>{props.profile.posts.likeCount}</b>
                   </Typography>
-                </Stack>
-                <Stack alignItems="center">
-                  <Typography color="text.secondary">Posts</Typography>
-                  <Typography color="text.secondary">
+              </HorizontalStack>
+              <HorizontalStack spacing={1}>
+                  <Typography  color="#A5A7B4">Posts</Typography>
+                  <Typography  color="#566376">
                     <b>{props.profile.posts.count}</b>
                   </Typography>
-                </Stack>
+              </HorizontalStack>
               </HorizontalStack>
             </Box>
           </HorizontalStack>
-          <Divider />
+          <Typography  sx={{ ml: 1, mt:2, mb:1 }}variant="h7" textOverflow="ellipses">
+            {user.username}
+          </Typography>
           <Box>
             {currentUser && user._id === currentUser.userId && (
               <IconButton onClick={props.handleEditing} sx={{ mr: 1 }}>
                 {props.editing ? (
-                  <MdCancel color={iconColor} />
+                  <MdCancel color={"#4A92FF"} />
                 ) : (
-                  <AiFillEdit color={iconColor} />
+                  <AiFillEdit color={"#4A92FF"} />
                 )}
               </IconButton>
             )}
             {user.biography ? (
               <>
-                <Typography textAlign="center" variant="p">
-                  <b>Bio: </b>
+                <Typography sx={{ ml: 1}} textAlign="center" variant="p">
+                  <b >Bio: </b>
                   {user.biography}
                 </Typography>
               </>
             ) : (
-              <Typography variant="p">
+              <Typography sx={{color:"#A5A7B4", ml: 1}} variant="p">
                 <i>
                   No bio yet{" "}
                   {currentUser && user._id === currentUser.userId && (
-                    <span>- Tap on the edit icon to add your bio</span>
+                    <span style={{color:"#A5A7B4"}} >- Tap on the edit icon to add your bio</span>
                   )}
                 </i>
               </Typography>
             )}
             {currentUser && user._id !== currentUser.userId && (
               <Box sx={{ mt: 2 }}>
-                <Button variant="outlined" s={{border: "1px solid #fff"}}  onClick={props.handleMessage}>
-                  Message
+                <Button variant="" sx={{color:"#4A92FF", ml: 1}}  s={{border: "1px solid #fff"}}  onClick={props.handleMessage}>
+                  Send Message
                 </Button>
               </Box>
             )}
