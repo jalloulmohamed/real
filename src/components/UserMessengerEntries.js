@@ -11,10 +11,11 @@ const UserMessengerEntries = (props) => {
   return !props.loading ? (
     <>
       {props.conversations.length > 0 ? (
-        <Stack>
+        <Stack >
           <HorizontalStack
             alignItems="center"
             spacing={2}
+            
             sx={{ height: "60px" }}
             color="#566376"
           >

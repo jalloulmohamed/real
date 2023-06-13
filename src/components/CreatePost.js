@@ -15,6 +15,7 @@ const CreatePost = () => {
         gap: "0.2rem",
         whiteSpace: "nowrap",
         color:"#566376",
+        margin:"20px",
         border:"none",
         '&:hover': {
           backgroundColor: '#fff',

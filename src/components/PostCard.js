@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { deletePost, likePost, unlikePost, updatePost } from "../api/posts";
 import { isLoggedIn } from "../helpers/authHelper";
 import ContentDetails from "./ContentDetails";
-
+import {FiMoreHorizontal} from 'react-icons/fi'
 import LikeBox from "./LikeBox";
 import PostContentBox from "./PostContentBox";
 import HorizontalStack from "./util/HorizontalStack";
@@ -120,7 +120,8 @@ const PostCard = (props) => {
               <Box>
                 {user && (isAuthor || user.isAdmin) && preview !== "secondary" && (
                   <HorizontalStack>
-                    <IconButton
+                    <FiMoreHorizontal color={"#FDC04D"} size={25}></FiMoreHorizontal>
+                    {/* <IconButton
                       disabled={loading}
                       size="small"
                       onClick={handleEditPost}
@@ -143,7 +144,7 @@ const PostCard = (props) => {
                       ) : (
                         <BiTrash  color={"#FDC04D"} />
                       )}
-                    </IconButton>
+                    </IconButton> */}
                   </HorizontalStack>
                 )}
               </Box>

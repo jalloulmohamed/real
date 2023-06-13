@@ -28,15 +28,15 @@ const Message = (props) => {
       alignItems="flex-end"
     >
       {message.direction === "to" && (
-        <UserAvatar username={username} height={30} width={30} />
+        <UserAvatar username={username} height={35} width={35} />
       )}
 
       <Card
         sx={{
-          borderRadius: "25px",
+          borderRadius: "20px",
           backgroundColor: styles.messageColor,
           borderWidth: "1px",
-          paddingY: "12px",
+          paddingY: 1,
           maxWidth: "70%",
           paddingX: 2,
         }}

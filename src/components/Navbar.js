@@ -114,6 +114,7 @@ const Navbar = () => {
               <IoSearchOutline size={24} color="#566376"/>
             </IconButton>
           )}
+          
 
           {/* <IconButton component={Link}  to={"/"}>
             <AiFillHome size={20} color="#566376" />

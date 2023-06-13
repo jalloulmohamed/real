@@ -109,6 +109,8 @@ const SignupView = () => {
             onChange={handleChange}
             error={errors.username !== undefined}
             helperText={errors.username}
+            size="small"
+           
           />
           <TextField
             label="Email Address"
@@ -121,6 +123,7 @@ const SignupView = () => {
             onChange={handleChange}
             error={errors.email !== undefined}
             helperText={errors.email}
+            size="small"
           />
           <TextField
             label="Password"
@@ -134,9 +137,10 @@ const SignupView = () => {
             onChange={handleChange}
             error={errors.password !== undefined}
             helperText={errors.password}
+            size="small"
           />
           <ErrorAlert error={serverError} />
-          <Button type="submit" fullWidth variant="contained" sx={{py:"14px", my: 2  , backgroundColor:"#566376" ,'&:hover':{ backgroundColor:"#566376", } }}>
+          <Button type="submit" fullWidth variant="contained" sx={{py:"9px", my: 2  , backgroundColor:"#566376" ,'&:hover':{ backgroundColor:"#566376", } }}>
           Sign Up
           </Button>
         </Box>

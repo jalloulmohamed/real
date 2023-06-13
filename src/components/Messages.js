@@ -171,7 +171,13 @@ const Messages = (props) => {
           <HorizontalStack
             alignItems="center"
             spacing={2}
-            sx={{ px: 2, height: "60px" }}
+            sx={{
+              paddingLeft: {
+                md: '20px',
+                xs: '0',
+              }, 
+              mb:2 
+            }}
           >
             {props.mobile && (
               <IconButton
@@ -198,10 +204,12 @@ const Messages = (props) => {
             </Typography>
           </HorizontalStack>
           
-          <Box sx={{ height: "calc(100vh - 240px)" }}>
+          <Box sx={{ height: "calc(100vh - 200px)" }}>
             <Box sx={{ height: "100%" }}>
               <Stack
-                sx={{ padding: 2, overflowY: "auto", maxHeight: "100%" }}
+                sx={{ padding: 2, overflowY: "auto", '&::-webkit-scrollbar': { display: 'none' },
+                msOverflowStyle: 'none',
+                scrollbarWidth: 'none',maxHeight: "100%" }}
                 direction="column-reverse"
               >
                 <div ref={messagesEndRef} />

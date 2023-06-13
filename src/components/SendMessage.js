@@ -24,8 +24,11 @@ const SendMessage = (props) => {
   return (
     <Stack
       sx={{
-        m: 2,
-        height: "40px",
+        my:1,
+          paddingLeft: {
+            md: '20px',
+            xs: '0',
+          }, 
       }}
       justifyContent="space-between"
     >
@@ -37,6 +40,8 @@ const SendMessage = (props) => {
           value={content}
           autoComplete="off"
           size="small"
+          InputProps={{ sx: {  borderRadius: 10 } }}
+          
           
           onKeyPress={(e) => {
             if (e.key === "Enter" && content.length > 0) {
@@ -45,7 +50,7 @@ const SendMessage = (props) => {
           }}
         />
 
-        <Button  onClick={handleSendMessage} disabled={content.length === 0}>
+        <Button  sx={{margin:0,color:"#FDC04D"  ,padding:0}} onClick={handleSendMessage} disabled={content.length === 0}>
           <IoSend size={25}></IoSend>
         </Button>
       </HorizontalStack>

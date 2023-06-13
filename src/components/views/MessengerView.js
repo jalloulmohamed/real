@@ -64,22 +64,23 @@ const MessengerView = () => {
   return (
     <Container>
       <Navbar />
-      <Box>
+      <Box >
         <Card sx={{ padding: 0 ,border:0 }}>
           <Grid
             container
-            sx={{ height: "calc(100vh - 110px)" }}
+            sx={{ height: "calc(100vh - 90px)" }}
             alignItems="stretch"
           >
             {!mobile ? (
               <>
                 <Grid
-                  item
+                  
                   xs={5}
                   sx={{
                     borderRight: 1,
                     borderColor: "divider",
                     height: "100%",
+                    
                   }}
                 >
                   <UserMessengerEntries
@@ -90,7 +91,7 @@ const MessengerView = () => {
                   />
                 </Grid>
 
-                <Grid item xs={7} sx={{ height: "100%" }}>
+                <Grid  xs={7} sx={{ height: "100%" }}>
                   <Messages
                     conservant={conservant}
                     conversations={conversations}
@@ -102,10 +103,8 @@ const MessengerView = () => {
               </>
             ) : !conservant ? (
               <Grid
-                item
                 xs={12}
                 sx={{
-                 
                   borderColor: "divider",
                   height: "100%",
                 }}
@@ -127,7 +126,7 @@ const MessengerView = () => {
                 </Box>
               </Grid>
             ) : (
-              <Grid item xs={12} sx={{ height: "100%" }}>
+              <Grid  xs={12} sx={{ height: "100%" }}>
                 <Messages
                   conservant={conservant}
                   conversations={conversations}
