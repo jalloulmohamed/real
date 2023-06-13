@@ -69,7 +69,9 @@ const LoginView = () => {
             textDecoration: 'none',
           }} to="/signup">Sign Up</Link>
         </Typography>
-        <Box component="form" onSubmit={handleSubmit}>
+        <Box  sx={{maxWidth:{
+          md:"310px"
+        }}}  component="form" onSubmit={handleSubmit}>
           <TextField
             label="Email Address"
             fullWidth
@@ -95,7 +97,7 @@ const LoginView = () => {
           />
 
           <ErrorAlert error={serverError} />
-          <Button type="submit" fullWidth variant="contained" sx={{ p:"10px", my: 2  , backgroundColor:"#566376" ,'&:hover':{ backgroundColor:"#566376", } }}>
+          <Button type="submit" fullWidth variant="contained" sx={{ p:"8px", my: 2  , backgroundColor:"#566376" ,'&:hover':{ backgroundColor:"#566376", } }}>
             Login
           </Button>
         </Box>
