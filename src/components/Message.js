@@ -35,7 +35,6 @@ const Message = (props) => {
         sx={{
           borderRadius: "20px",
           backgroundColor: styles.messageColor,
-          borderWidth: "1px",
           paddingY: 1,
           maxWidth: "70%",
           paddingX: 2,
