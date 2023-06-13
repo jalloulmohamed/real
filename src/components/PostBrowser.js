@@ -11,6 +11,7 @@ import Loading from "./Loading";
 import PostCard from "./PostCard";
 import SortBySelect from "./SortBySelect";
 import HorizontalStack from "./util/HorizontalStack";
+import {AiOutlineReload} from 'react-icons/ai'
 
 const PostBrowser = (props) => {
   const [posts, setPosts] = useState([]);
@@ -160,7 +161,7 @@ const PostBrowser = (props) => {
                 <>No posts available</>
               )}
             </Typography>
-            <Button variant="text" size="small" onClick={handleBackToTop}>
+            <Button  sx={{color:"#FDC04D"}}  variant="text" size="small" onClick={handleBackToTop}>
               Back to top
             </Button>
           </Stack>
@@ -169,10 +170,8 @@ const PostBrowser = (props) => {
           posts &&
           posts.length > 0 && (
             <Stack pt={2} pb={6} alignItems="center" spacing={2}>
-              <Button onClick={fetchPosts} variant="contained">
-                Load more
-              </Button>
-              <Button variant="text" size="small" onClick={handleBackToTop}>
+              <AiOutlineReload sx={{color:"#"}}  onClick={fetchPosts}></AiOutlineReload>
+              <Button sx={{color:"#FDC04D"}}  variant="text" size="small" onClick={handleBackToTop}>
                 Back to top
               </Button>
             </Stack>
