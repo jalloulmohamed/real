@@ -153,7 +153,7 @@ const PostCard = (props) => {
             <Typography
               
               gutterBottom
-              sx={{ fontWeight: 'bold' ,fontSize:"14px", overflow: "hidden", mt: 1, maxHeight: 125,  color:"#FDC04D"}}
+              sx={{ fontWeight: 'bold' ,fontSize:"14px", overflow: "hidden", mt: 1, maxHeight: 125,  color:"#428efc"}}
               className="title"
             >
               {post.title}
