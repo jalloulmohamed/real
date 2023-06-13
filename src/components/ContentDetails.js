@@ -19,7 +19,7 @@ const ContentDetails = ({ username, createdAt, edited, preview }) => {
           style={{
             color:"#000",
             fontWeight: 'bold',
-            fontSize: 15,
+            fontSize:"14px",
             textDecoration: 'none',
           }}
         >

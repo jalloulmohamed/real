@@ -34,7 +34,7 @@ const ContentUpdateEditor = (props) => {
           fullWidth
           margin="normal"
           name="content"
-          sx={{ backgroundColor: "white" }}
+          sx={{ backgroundColor: "white", fontSize:"14px" }}
           onChange={handleChange}
           error={error.length !== 0}
           helperText={error}
