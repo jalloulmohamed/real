@@ -190,6 +190,13 @@ const PostCard = (props) => {
                           <HiOutlineTrash size={20} color={"#666666"} />
                         )}
                       </IconButton>
+
+                      {mobile  && confirm && (
+                        <IconButton size="small">
+                          <MdCancel onClick={handleMouseLeave}  color={"#666666"} />
+                        </IconButton>
+                        )}
+                      
                       </Stack>
                     )}
                   </Stack>

@@ -42,7 +42,7 @@ const ContentUpdateEditor = (props) => {
         <Button
           type="submit"
           variant="outlined"
-          sx={{ backgroundColor: "white", mt: 1 }}
+          sx={{  backgroundColor:  "white", mt: 1  }}
         >
           Update
         </Button>
