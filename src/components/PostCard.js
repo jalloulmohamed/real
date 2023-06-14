@@ -113,11 +113,21 @@ const PostCard = (props) => {
     }
   };
   const handleMouseEnter = () => {
-    setIsHovered(true);
+    
+      setIsHovered(true);
+    
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false);
+    if(!editing)
+    {
+      setIsHovered(false);
+    }
+    if(confirm && !editing)
+    {
+      setConfirm(false);
+      setIsHovered(false);
+    }
   };
   return (
     <Card sx={{ padding: 0 ,border:"none"  }} className="post-card">
@@ -191,7 +201,7 @@ const PostCard = (props) => {
                         )}
                       </IconButton>
 
-                      {mobile  && confirm && (
+                      { confirm && (
                         <IconButton size="small">
                           <MdCancel onClick={handleMouseLeave}  color={"#666666"} />
                         </IconButton>
