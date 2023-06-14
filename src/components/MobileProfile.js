@@ -64,7 +64,7 @@ const MobileProfile = (props) => {
                 {props.editing ? (
                   <MdCancel color={"#4A92FF"} />
                 ) : (
-                  <FiEdit2 color={"#4A92FF"} />
+                  <FiEdit2 size={18} color={"#4A92FF"} />
                 )}
               </IconButton>
             )}
