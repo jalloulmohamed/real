@@ -8,7 +8,7 @@ import {
   Divider
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useEffect, useState } from "react";
+import React, { useRef,useEffect, useState } from "react";
 import { AiFillCheckCircle, AiFillEdit, AiFillMessage } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { deletePost, likePost, unlikePost, updatePost } from "../api/posts";
@@ -47,6 +47,8 @@ const PostCard = (props) => {
   const [isHovered, setIsHovered] = useState(false);
   const [width, setWindowWidth] = useState(0);
 
+  const containerRef = useRef(null); // Create a ref for the parent container
+
   let maxHeight = null;
   if (preview === "primary") {
     maxHeight = 250;
@@ -57,12 +59,23 @@ const PostCard = (props) => {
     const width = window.innerWidth;
     setWindowWidth(width);
   };
+
   useEffect(() => {
     updateDimensions();
-
     window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
+    document.addEventListener("mousedown", handleClickOutside); // Add event listener for clicks outside the parent container
+    return () => {
+      window.removeEventListener("resize", updateDimensions);
+      document.removeEventListener("mousedown", handleClickOutside); // Cleanup event listener
+    };
   }, []);
+
+  const handleClickOutside = (event) => {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        // Check if the clicked element is outside the container
+          handleMouseLeave()
+    }
+  };
 
   const handleDeletePost = async (e) => {
     e.stopPropagation();
@@ -85,9 +98,6 @@ const PostCard = (props) => {
     e.stopPropagation();
 
     setEditing(!editing);
- 
-
-    
   };
 
   const handleSubmit = async (e) => {
@@ -97,11 +107,9 @@ const PostCard = (props) => {
     await updatePost(post._id, isLoggedIn(), { content });
     setPost({ ...post, content, edited: true });
     setEditing(false);
-    if(mobile)
-    {
-      setIsHovered(false)
+    if (mobile) {
+      setIsHovered(false);
     }
-
   };
 
   const handleLike = async (liked) => {
@@ -113,40 +121,38 @@ const PostCard = (props) => {
       await unlikePost(post._id, user);
     }
   };
+
   const handleMouseEnter = () => {
-    
-      setIsHovered(true);
-    
+    setIsHovered(true);
   };
 
   const handleMouseLeave = () => {
-      setConfirm(false)
-      if(editing)
-      {
-        setEditing(false);
-      }
-      setIsHovered(false);
+    setConfirm(false);
+    if (editing) {
+      setEditing(false);
+    }
+    setIsHovered(false);
   };
+
   return (
-    <Card sx={{ padding: 0 ,border:"none"  }} className="post-card">
+    <Card sx={{ padding: 0, border: "none" }} className="post-card">
       <Box padding={0} className={preview}>
-        <HorizontalStack spacing={0} alignItems="initial">
+        <HorizontalStack
+          spacing={0}
+          alignItems="initial"
+          
+        >
           <Stack
             justifyContent="space-between "
             alignItems="center"
             spacing={1}
             sx={{
-              // backgroundColor: "grey.100",
               width: "50px",
-              
-              
-              
             }}
           >
-          <UserAvatar width={40} height={40} username={post.poster.username} />
+            <UserAvatar width={40} height={40} username={post.poster.username} />
           </Stack>
-          <PostContentBox    post={post} editing={editing}>
-
+          <PostContentBox post={post} editing={editing}>
             <HorizontalStack justifyContent="space-between">
               <ContentDetails
                 username={post.poster.username}
@@ -156,48 +162,51 @@ const PostCard = (props) => {
               />
               <Box>
                 {user && (isAuthor || user.isAdmin) && preview !== "secondary" && (
-                  <Stack sx={{position:"relative", zIndex:100}} >
-                    <FiMoreHorizontal onClick={handleMouseEnter}
-                      color={"#FDC04D"} 
+                   // Assign the ref to the parent container
+                  <Stack sx={{ position: "relative", zIndex: 100 }} ref={containerRef} >
+                    <FiMoreHorizontal
+                      onClick={handleMouseEnter}
+                      color={"#FDC04D"}
                       size={25}
                       cursor={"pointer"}
-                      
-                    >
-                    </FiMoreHorizontal>
-                    {isHovered &&(
-                       <Stack sx={{position:"absolute",
-                        borderRadius:"50px", 
-                        px:"10px", 
-                        py:"1px", 
-                        boxShadow:"rgba(0, 0, 0, 0.16) 0px 1px 4px", 
-                        display:"flex" , 
-                        flexDirection:"row",
-                        top:"25px", 
-                        right:"2px"}} >
-                      
-                        {!editing   && 
+                    ></FiMoreHorizontal>
+                    {isHovered && (
+                      <Stack
+                        sx={{
+                          position: "absolute",
+                          borderRadius: "50px",
+                          px: "10px",
+                          py: "1px",
+                          boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
+                          display: "flex",
+                          flexDirection: "row",
+                          top: "25px",
+                          right: "2px",
+                        }}
+                      >
+                        
                           <IconButton
+                            disabled={loading}
+                            size="small"
+                            onClick={handleEditPost}
+                          >
+                            {editing ? (
+                            <MdCancel color={"#666666"} />
+                          ) : (
+                            <FiEdit2 color={"#666666"} />
+                          )}
+                            
+                          </IconButton>
+                        <IconButton
                           disabled={loading}
                           size="small"
-                          onClick={handleEditPost}
-                        
-                          >
-                            <FiEdit2  color={"#666666"} />
-                      </IconButton>
-                        }
-                      <IconButton
-                        disabled={loading}
-                        size="small"
-                        onClick={handleDeletePost}
-                      >
-                        {(confirm) ? (
-                          <AiFillCheckCircle  color={"#666666"} />
-                        ) : (
-                          <HiOutlineTrash size={20} color={"#666666"} />
-                        )}
-                      </IconButton>
-                        <IconButton onClick={handleMouseLeave} size="small">
-                          <MdCancel   color={"#666666"} />
+                          onClick={handleDeletePost}
+                        >
+                          {confirm ? (
+                            <AiFillCheckCircle color={"#666666"} />
+                          ) : (
+                            <HiOutlineTrash size={20} color={"#666666"} />
+                          )}
                         </IconButton>
                       </Stack>
                     )}
@@ -207,48 +216,62 @@ const PostCard = (props) => {
             </HorizontalStack>
 
             <Typography
-              
               gutterBottom
-              sx={{ fontWeight: 'bold' ,fontSize:"13px", overflow: "hidden", mt: 2, zIndex:10,maxWidth :"50%", color:"#FDC04D" }}
+              sx={{
+                fontWeight: "bold",
+                fontSize: "13px",
+                overflow: "hidden",
+                mt: 2,
+                zIndex: 10,
+                maxWidth: "50%",
+                color: "#FDC04D",
+              }}
               className="title"
             >
               {post.title}
             </Typography>
 
-            {preview !== "secondary" &&
-              (editing ? (
-                <ContentUpdateEditor
-                  handleSubmit={handleSubmit}
-                  originalContent={post.content}
-                />
-              ) : (
-                <Box
-                  maxHeight={maxHeight}
-                  overflow="hidden"
-                  className="content"
+            {preview !== "secondary" && (editing ? (
+              <ContentUpdateEditor
+                handleSubmit={handleSubmit}
+                originalContent={post.content}
+              />
+            ) : (
+              <Box
+                maxHeight={maxHeight}
+                overflow="hidden"
+                className="content"
+              >
+                <Markdown content={post.content} />
+              </Box>
+            ))}
+            <img
+              src={"/2.png"}
+              style={{
+                width: "100%",
+                marginTop: "10px",
+                borderRadius: "10px",
+              }}
+            ></img>
+            <HorizontalStack sx={{ mt: 1, mb: 3 }}>
+              <HorizontalStack
+                onClick={() => navigate("/posts/" + post._id)}
+              >
+                <AiFillMessage size={21} color="#D9D9D9" />
+                <Typography
+                  variant="subtitle2"
+                  color="#D9D9D9"
+                  sx={{ fontWeight: "bold" }}
                 >
-                  <Markdown content={post.content} />
-                </Box>
-              ))}
-              <img src={"/2.png"} style={{width:"100%"  ,marginTop:"10px", borderRadius:"10px"}}></img>
-            <HorizontalStack  sx={{ mt:1,mb:3} }  >
-                <HorizontalStack  onClick={() => navigate("/posts/" + post._id)} >
-                  <AiFillMessage size={21} color="#D9D9D9" />
-                  <Typography
-                    variant="subtitle2"
-                    color="#D9D9D9"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    {post.commentCount}
-                  </Typography>
-                </HorizontalStack>
+                  {post.commentCount}
+                </Typography>
+              </HorizontalStack>
               <LikeBox
-              likeCount={likeCount}
-              liked={post.liked}
-              onLike={handleLike}
-            />
+                likeCount={likeCount}
+                liked={post.liked}
+                onLike={handleLike}
+              />
             </HorizontalStack>
-
           </PostContentBox>
         </HorizontalStack>
       </Box>
