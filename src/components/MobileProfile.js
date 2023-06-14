@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
-import { AiFillEdit } from "react-icons/ai";
+import { FiEdit2 } from "react-icons/fi";
 import { MdCancel } from "react-icons/md";
 import { isLoggedIn } from "../helpers/authHelper";
 import ContentUpdateEditor from "./ContentUpdateEditor";
@@ -62,9 +62,9 @@ const MobileProfile = (props) => {
             {currentUser && user._id === currentUser.userId && (
               <IconButton onClick={props.handleEditing} sx={{ mr: 1 }}>
                 {props.editing ? (
-                  <MdCancel color={"#FDC04D"} />
+                  <MdCancel color={"#4A92FF"} />
                 ) : (
-                  <AiFillEdit color={"#FDC04D"} />
+                  <FiEdit2 color={"#4A92FF"} />
                 )}
               </IconButton>
             )}
