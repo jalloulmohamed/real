@@ -85,6 +85,7 @@ const PostCard = (props) => {
     e.stopPropagation();
 
     setEditing(!editing);
+ 
 
     
   };
@@ -119,15 +120,12 @@ const PostCard = (props) => {
   };
 
   const handleMouseLeave = () => {
-    if(!editing)
-    {
+      setConfirm(false)
+      if(editing)
+      {
+        setEditing(false);
+      }
       setIsHovered(false);
-    }
-    if(confirm && !editing)
-    {
-      setConfirm(false);
-      setIsHovered(false);
-    }
   };
   return (
     <Card sx={{ padding: 0 ,border:"none"  }} className="post-card">
@@ -158,9 +156,8 @@ const PostCard = (props) => {
               />
               <Box>
                 {user && (isAuthor || user.isAdmin) && preview !== "secondary" && (
-                  <Stack sx={{position:"relative", zIndex:100}} onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}>
-                    <FiMoreHorizontal 
+                  <Stack sx={{position:"relative", zIndex:100}} >
+                    <FiMoreHorizontal onClick={handleMouseEnter}
                       color={"#FDC04D"} 
                       size={25}
                       cursor={"pointer"}
@@ -177,36 +174,31 @@ const PostCard = (props) => {
                         flexDirection:"row",
                         top:"25px", 
                         right:"2px"}} >
-                      <IconButton
-                        disabled={loading}
-                        size="small"
-                        onClick={handleEditPost}
                       
-                      >
-                        {editing ? (
-                          <MdCancel   color={"#666666"} />
-                        ) : (
-                          <FiEdit2  color={"#666666"} />
-                        )}
+                        {!editing   && 
+                          <IconButton
+                          disabled={loading}
+                          size="small"
+                          onClick={handleEditPost}
+                        
+                          >
+                            <FiEdit2  color={"#666666"} />
                       </IconButton>
+                        }
                       <IconButton
                         disabled={loading}
                         size="small"
                         onClick={handleDeletePost}
                       >
-                        {confirm ? (
+                        {(confirm) ? (
                           <AiFillCheckCircle  color={"#666666"} />
                         ) : (
                           <HiOutlineTrash size={20} color={"#666666"} />
                         )}
                       </IconButton>
-
-                      { confirm && (
-                        <IconButton size="small">
-                          <MdCancel onClick={handleMouseLeave}  color={"#666666"} />
+                        <IconButton onClick={handleMouseLeave} size="small">
+                          <MdCancel   color={"#666666"} />
                         </IconButton>
-                        )}
-                      
                       </Stack>
                     )}
                   </Stack>
