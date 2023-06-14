@@ -8,7 +8,7 @@ import {
   Divider
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillCheckCircle, AiFillEdit, AiFillMessage } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { deletePost, likePost, unlikePost, updatePost } from "../api/posts";
@@ -45,11 +45,24 @@ const PostCard = (props) => {
   const [post, setPost] = useState(postData);
   const [likeCount, setLikeCount] = useState(post.likeCount);
   const [isHovered, setIsHovered] = useState(false);
+  const [width, setWindowWidth] = useState(0);
 
   let maxHeight = null;
   if (preview === "primary") {
     maxHeight = 250;
   }
+  const mobile = width < 500;
+
+  const updateDimensions = () => {
+    const width = window.innerWidth;
+    setWindowWidth(width);
+  };
+  useEffect(() => {
+    updateDimensions();
+
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
 
   const handleDeletePost = async (e) => {
     e.stopPropagation();
@@ -72,6 +85,7 @@ const PostCard = (props) => {
     e.stopPropagation();
 
     setEditing(!editing);
+
     
   };
 
@@ -82,7 +96,11 @@ const PostCard = (props) => {
     await updatePost(post._id, isLoggedIn(), { content });
     setPost({ ...post, content, edited: true });
     setEditing(false);
-    setIsHovered(!isHovered);
+    if(mobile)
+    {
+      setIsHovered(false)
+    }
+
   };
 
   const handleLike = async (liked) => {
@@ -136,6 +154,7 @@ const PostCard = (props) => {
                       color={"#FDC04D"} 
                       size={25}
                       cursor={"pointer"}
+                      
                     >
                     </FiMoreHorizontal>
                     {isHovered &&(
