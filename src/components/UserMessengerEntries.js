@@ -24,9 +24,9 @@ const UserMessengerEntries = (props) => {
               <b>Your Conversations</b>
             </Typography>
           </HorizontalStack>
-          <Box sx={{ height: "calc(100vh - 171px)" }}>
+          <Box sx={{ height: "calc(100vh - 146px)"}}>
             <Box sx={{ height: "100%" }}>
-              <List sx={{ padding: 0, maxHeight: "100%", overflowY: "auto" }}>
+              <List sx={{ padding: 0, maxHeight: "100%", overflowY: "auto" ,'&::-webkit-scrollbar': {display:"none"}}}>
                 {props.conversations.map((conversation) => (
                   <UserMessengerEntry
                     conservant={props.conservant}
