@@ -49,6 +49,24 @@ const getPost = async (postId, token) => {
   }
 };
 
+const getUserLikes = async (postId, anchor) => {
+  try {
+    const res = await fetch(
+      BASE_URL +
+        "api/posts/like/" +
+        postId +
+        "/users?" +
+        new URLSearchParams({
+          anchor,
+        })
+    );
+
+    return await res.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 const createPost = async (post, user) => {
   try {
     const res = await fetch(BASE_URL + "api/posts", {
@@ -195,24 +213,6 @@ const unlikePost = async (postId, user) => {
     console.log(err);
   }
 };
-const getUserLikes = async (postId, anchor) => {
-  try {
-    const res = await fetch(
-      BASE_URL +
-        "api/posts/like/" +
-        postId +
-        "/users?" +
-        new URLSearchParams({
-          anchor,
-        })
-    );
-
-    return await res.json();
-  } catch (err) {
-    console.log(err);
-  }
-};
-
 
 export {
   getPost,
