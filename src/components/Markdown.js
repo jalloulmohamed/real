@@ -10,10 +10,15 @@ const Markdown = ({ content }) => {
     <Typography sx={{fontSize:"14px",lineHeight:"17px"}} component="span">
       <ReactMarkdown
         className="markdown"
-        style={{ "&p": { margin: 0} }}
         disallowedElements={disallowed}
         skipHtml
         children={content }
+        style={{
+          width: "100%",
+          marginTop: "10px",
+          borderRadius: "10px",
+          "&p": { margin: 0} 
+        }}
       />
     </Typography>
   );

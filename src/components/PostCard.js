@@ -241,8 +241,6 @@ const PostCard = (props) => {
               />
             ) : (
               <Box
-                
-                
               >
                 <Markdown content={post.content} />
               </Box>
