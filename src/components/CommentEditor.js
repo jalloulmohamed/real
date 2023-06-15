@@ -75,7 +75,7 @@ const CommentEditor = ({ label, comment, addComment, setReplying }) => {
             }}
             InputProps={{ sx: {  borderRadius: 10 , } }}
           />
-          <IconButton
+          {/* <IconButton
             variant="outlined"
             type="submit"
             fullWidth
@@ -85,7 +85,7 @@ const CommentEditor = ({ label, comment, addComment, setReplying }) => {
             }}
           >
             {loading ?  <div style={{fontSize:"12px", color:"#FDC04D"}}>Sending</div> : <RiSendPlaneFill></RiSendPlaneFill>}
-          </IconButton>
+          </IconButton> */}
         </HorizontalStack>
 
           <ErrorAlert error={error} />
