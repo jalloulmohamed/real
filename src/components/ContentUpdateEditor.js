@@ -34,7 +34,7 @@ const ContentUpdateEditor = (props) => {
         <TextField
           value={content}
           fullWidth
-
+          rows={1}
           size="small"
           name="content"
           sx={{ backgroundColor: "white", fontSize:"10px" , }}
