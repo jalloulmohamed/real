@@ -54,12 +54,11 @@ const CommentEditor = ({ label, comment, addComment, setReplying }) => {
         </HorizontalStack>
 
         <Box  component="form" onSubmit={handleSubmit}>
-        <HorizontalStack>   
+        <HorizontalStack  >   
           <TextField
             rows={1}
-            fullWidth
             label="Add comment"
-            
+            fullWidth
             required
             size="small"
             name="content"
@@ -74,7 +73,7 @@ const CommentEditor = ({ label, comment, addComment, setReplying }) => {
                 handleSubmit();
               }
             }}
-            InputProps={{ sx: {  borderRadius: 10 , width:"100%" } }}
+            InputProps={{ sx: {  borderRadius: 10 , } }}
           />
           <IconButton
             variant="outlined"
