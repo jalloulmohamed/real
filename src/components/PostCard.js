@@ -241,8 +241,7 @@ const PostCard = (props) => {
               />
             ) : (
               <Box
-                maxHeight={maxHeight}
-                overflow="hidden"
+                
                 className="content"
               >
                 <Markdown content={post.content} />
