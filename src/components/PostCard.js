@@ -28,6 +28,8 @@ import { MdCancel } from "react-icons/md";
 import { HiOutlineTrash } from "react-icons/hi";
 import { FiEdit2 } from "react-icons/fi";
 import UserAvatar from "./UserAvatar";
+import UserLikePreview from "./UserLikePreview";
+
 
 const PostCard = (props) => {
   const { preview, removePost } = props;
@@ -133,6 +135,7 @@ const PostCard = (props) => {
     }
     setIsHovered(false);
   };
+  
 
   return (
     <Card sx={{ padding: 0, border: "none" }} className="post-card">
@@ -253,6 +256,12 @@ const PostCard = (props) => {
                 borderRadius: "10px",
               }}
             ></img>
+            <Box>
+                <UserLikePreview
+                  postId={post._id}
+                  userLikePreview={post.userLikePreview}
+                />
+            </Box>
             <HorizontalStack sx={{ mt: 1, mb: 3 }}>
               <HorizontalStack
                 onClick={() => navigate("/posts/" + post._id)}

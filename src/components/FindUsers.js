@@ -14,7 +14,7 @@ import { getRandomUsers } from "../api/users";
 import Loading from "./Loading";
 import UserAvatar from "./UserAvatar";
 import HorizontalStack from "./util/HorizontalStack";
-
+import UserEntry from "./UserEntry";
 const FindUsers = () => {
   const [loading, setLoading] = useState(true);
   const [users, setUsers] = useState(null);
@@ -58,19 +58,7 @@ const FindUsers = () => {
         ) : (
           users &&
           users.map((user) => (
-            <HorizontalStack justifyContent="space-between" key={user._id}>
-              <HorizontalStack>
-                <UserAvatar width={30} height={30} username={user.username} />
-                <Typography>{user.username}</Typography>
-              </HorizontalStack>
-              <Link to={"/users/" + user.username} style={{
-            color:"#4A92FF",
-            fontSize: 15,
-            textDecoration: 'none',
-            '&:hover': {
-            },
-          }}>View</Link>
-            </HorizontalStack>
+            <UserEntry username={user.username} size={35} key={user.username} />
           ))
         )}
       </Stack>

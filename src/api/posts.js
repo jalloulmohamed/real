@@ -14,6 +14,7 @@ const getUserLikedPosts = async (likerId, token, query) => {
         },
       }
     );
+    console.log(res)
     return await res.json();
   } catch (err) {
     console.log(err);
@@ -43,6 +44,24 @@ const getPost = async (postId, token) => {
         "x-access-token": token,
       },
     });
+    return await res.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const getUserLikes = async (postId, anchor) => {
+  try {
+    const res = await fetch(
+      BASE_URL +
+        "api/posts/like/" +
+        postId +
+        "/users?" +
+        new URLSearchParams({
+          anchor,
+        })
+    );
+
     return await res.json();
   } catch (err) {
     console.log(err);
@@ -210,4 +229,5 @@ export {
   updateComment,
   likePost,
   unlikePost,
+  getUserLikes,
 };
