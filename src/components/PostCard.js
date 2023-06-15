@@ -248,14 +248,14 @@ const PostCard = (props) => {
                 <Markdown content={post.content} />
               </Box>
             ))}
-            <img
+            {/* <img
               src={"/2.png"}
               style={{
                 width: "100%",
                 marginTop: "10px",
                 borderRadius: "10px",
               }}
-            ></img>
+            ></img> */}
             <Box>
                 <UserLikePreview
                   postId={post._id}
