@@ -228,5 +228,5 @@ export {
   updateComment,
   likePost,
   unlikePost,
-  getUserLikes
+  getUserLikes,
 };
