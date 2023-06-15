@@ -11,8 +11,8 @@ import { deleteComment, updateComment } from "../api/posts";
 import ContentUpdateEditor from "./ContentUpdateEditor";
 import Markdown from "./Markdown";
 import { MdCancel } from "react-icons/md";
-import { BiReply, BiTrash } from "react-icons/bi";
-import { BsReply, BsReplyFill } from "react-icons/bs";
+import {  HiOutlineTrash } from "react-icons/hi";
+import { FiEdit2 } from "react-icons/fi";
 import Moment from "react-moment";
 import UserAvatar from "./UserAvatar";
 const Comment = (props) => {
@@ -61,7 +61,8 @@ const Comment = (props) => {
     borderRadius: 1.5,
     marginTop:"5px",
     marginBottom:"5px",
-    display:"flex"
+    display:"flex",
+
 
   };
 
@@ -74,7 +75,7 @@ const Comment = (props) => {
       <UserAvatar  width={30} height={30} username={comment.commenter.username} />
       <Box
         sx={{
-          px: 1,
+          pl: 1,
         }}
       >
         {props.profile ? (
@@ -89,7 +90,7 @@ const Comment = (props) => {
                 {comment.post.title}
               </Link>
             </Typography>
-            <Typography variant="subtitle2" color="text.secondary" gutterBottom>
+            <Typography variant="subtitle2" color="#EEEEEE" gutterBottom>
               <Moment fromNow>{comment.createdAt}</Moment>{" "}
               {comment.edited && <>(Edited)</>}
             </Typography>
@@ -103,7 +104,7 @@ const Comment = (props) => {
                 edited={comment.edited}
               />
 
-              <IconButton
+              {/* <IconButton
                 color="primary"
                 onClick={() => setMinimised(!minimised)}
               >
@@ -112,21 +113,21 @@ const Comment = (props) => {
                 ) : (
                   <AiOutlineLine size={15} />
                 )}
-              </IconButton>
+              </IconButton> */}
             </HorizontalStack>
             {!minimised && (
               <HorizontalStack spacing={1}>
-                <IconButton
+                {/* <IconButton
                   variant="text"
                   size="small"
                   onClick={handleSetReplying}
                 >
                   {!replying ? (
-                    <BsReplyFill color={iconColor} />
+                    <FiEdit2 size={15} color={"#666666"} />
                   ) : (
                     <MdCancel color={iconColor} />
                   )}
-                </IconButton>
+                </IconButton> */}
                 {user && (isAuthor || user.isAdmin) && (
                   <HorizontalStack spacing={1}>
                     <IconButton
@@ -135,9 +136,9 @@ const Comment = (props) => {
                       onClick={() => setEditing(!editing)}
                     >
                       {editing ? (
-                        <MdCancel color={iconColor} />
+                        <MdCancel color={"#666666"} />
                       ) : (
-                        <AiFillEdit color={iconColor} />
+                        <FiEdit2 size={14} color={"#666666"} />
                       )}
                     </IconButton>
                     <IconButton
@@ -145,7 +146,7 @@ const Comment = (props) => {
                       size="small"
                       onClick={handleDelete}
                     >
-                      <BiTrash color={theme.palette.error.main} />
+                      <HiOutlineTrash  size={14} color={"#666666"} />
                     </IconButton>
                   </HorizontalStack>
                 )}
@@ -157,7 +158,16 @@ const Comment = (props) => {
         {!minimised && (
           <Box sx={{ mt: 1  ,color:"#868686" ,}} overflow="hidden">
             {!editing ? (
+              <>
               <Markdown content={comment.content} />
+              {!replying ? (
+                <Typography py={"5px"}  sx={{fontSize:"13px" , cursor:"pointer"}} color={"#4A92FF"}  onClick={handleSetReplying}> reply
+                </Typography> 
+              ) : (
+                <Typography py={"5px"} color={"#4A92FF"} sx={{fontSize:"13px" , cursor:"pointer"}} onClick={handleSetReplying}> close
+                </Typography> 
+              )}
+              </>
             ) : (
               <ContentUpdateEditor
                 handleSubmit={handleSubmit}

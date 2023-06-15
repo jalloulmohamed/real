@@ -13,7 +13,7 @@ const Markdown = ({ content }) => {
         style={{ "&p": { margin: 0} }}
         disallowedElements={disallowed}
         skipHtml
-        children={content}
+        children={content }
       />
     </Typography>
   );

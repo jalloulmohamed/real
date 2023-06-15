@@ -37,7 +37,7 @@ const UserLikePreview = ({ postId, userLikePreview }) => {
                 userLikes.map((userLike) => (
                   <Avatar
                     src={"https://robohash.org/" + userLike.username+ "?set=set5"}
-                    sx={{ backgroundColor: "lightgray", width: 18, height: 18  }}
+                    sx={{ backgroundColor: "lightgray", width: 17, height: 16  }}
                     key={userLike._id}
                   />
                 ))}

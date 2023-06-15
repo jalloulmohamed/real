@@ -112,7 +112,6 @@ const SignupView = () => {
             error={errors.username !== undefined}
             helperText={errors.username}
             size="small"
-           
           />
           <TextField
             label="Email Address"

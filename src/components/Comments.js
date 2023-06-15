@@ -95,14 +95,15 @@ const Comments = () => {
   };
 
   return comments ? (
-    <Stack  spacing={2}>
+    <Stack sx={{pl:{md:"60px",xs:"0px"}, pr:{md:"30px",xs:"0px"}, mt: "0px !important", p:"0"}}    spacing={2}>
+      
       <CommentEditor 
         addComment={addComment}
         label="What are your thoughts on this post?"
       />
 
       {comments.length > 0 ? (
-        <Box pb={4}>
+        <Box  pb={4}>
           {comments.map((comment, i) => (
             <Comment
               addComment={addComment}
@@ -118,18 +119,17 @@ const Comments = () => {
       ) : (
         <Box
           display="flex"
+          flexDirection="column"
           justifyContent="center"
           textAlign="center"
           paddingY={3}
         >
-          <Box>
-            <Typography variant="h5" color="text.secondary" gutterBottom>
+            <Typography variant="h8" color="text.secondary" gutterBottom>
               No comments yet...
             </Typography>
             <Typography variant="body" color="text.secondary">
               Be the first one to comment!
             </Typography>
-          </Box>
         </Box>
       )}
     </Stack>

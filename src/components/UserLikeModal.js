@@ -84,6 +84,7 @@ const UserLikeModal = ({ postId, open, setOpen }) => {
                     md:"350px",
                     xs:"90%",
                 },
+                outline:"none",
                 height:"300px" , 
                 margin:"auto",
                 overflowY:"scroll",

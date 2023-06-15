@@ -10,12 +10,10 @@ const CreatePost = () => {
       variant="outlined"
       size="medium"
       onClick={() => navigate("/posts/create")}
-      sx={{
-        padding:2,
+      sx={{ 
         gap: "0.2rem",
         whiteSpace: "nowrap",
         color:"#566376",
-        margin:"20px",
         border:"none",
         '&:hover': {
           backgroundColor: '#fff',

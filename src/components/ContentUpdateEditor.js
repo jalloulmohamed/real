@@ -1,6 +1,7 @@
-import { Box, Button, Stack, TextField } from "@mui/material";
+import { Box, Button, IconButton, Stack, TextField } from "@mui/material";
 import React, { useState } from "react";
-
+import HorizontalStack from "./util/HorizontalStack";
+import {RiSendPlaneFill} from 'react-icons/ri'
 const ContentUpdateEditor = (props) => {
   const [content, setContent] = useState(props.originalContent);
   const [error, setError] = useState("");
@@ -29,23 +30,28 @@ const ContentUpdateEditor = (props) => {
   return (
     <Box component="form" onSubmit={handleSubmit}>
       <Stack>
+      <HorizontalStack alignItems="start" >
         <TextField
           value={content}
           fullWidth
+          size="small"
           name="content"
-          sx={{ backgroundColor: "white", fontSize:"10px" }}
+          sx={{ backgroundColor: "white", fontSize:"10px" , }}
           onChange={handleChange}
           error={error.length !== 0}
           helperText={error}
           multiline
+          id="margin-none"
+          InputProps={{ sx: { width:"100%",border:"none" , '&:focus':{outline:"none"} } }}
         />
-        <Button
+        <IconButton
           type="submit"
           variant="outlined"
           sx={{  backgroundColor:  "white", mt: 1  }}
         >
-          Update
-        </Button>
+          <RiSendPlaneFill></RiSendPlaneFill>
+        </IconButton>
+      </HorizontalStack>
       </Stack>
     </Box>
   );

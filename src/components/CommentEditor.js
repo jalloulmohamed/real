@@ -1,4 +1,4 @@
-import { Button, Card, Stack, TextField, Typography } from "@mui/material";
+import { Button,IconButton, Card, Stack, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -6,7 +6,7 @@ import { createComment } from "../api/posts";
 import { isLoggedIn } from "../helpers/authHelper";
 import ErrorAlert from "./ErrorAlert";
 import HorizontalStack from "./util/HorizontalStack";
-
+import {RiSendPlaneFill} from "react-icons/ri"
 const CommentEditor = ({ label, comment, addComment, setReplying }) => {
   const [formData, setFormData] = useState({
     content: "",
@@ -29,7 +29,7 @@ const CommentEditor = ({ label, comment, addComment, setReplying }) => {
       ...formData,
       parentId: comment && comment._id,
     };
-
+    console.log(body)
     setLoading(true);
     const data = await createComment(body, params, isLoggedIn());
     setLoading(false);
@@ -48,21 +48,20 @@ const CommentEditor = ({ label, comment, addComment, setReplying }) => {
   };
 
   return (
-    <Card  sx={{border:0}}>
+    <Card  sx={{border:0 , m:0 ,p:0}}>
       <Stack spacing={2}>
         <HorizontalStack justifyContent="space-between">
-          <Typography variant="h5">
-            {comment ? <>Reply</> : <>Comment</>}
-          </Typography>
         </HorizontalStack>
 
-        <Box component="form" onSubmit={handleSubmit}>
+        <Box  component="form" onSubmit={handleSubmit}>
+        <HorizontalStack>   
           <TextField
             multiline
             fullWidth
-            label={label}
-            rows={1}
+            label="Add comment"
+            
             required
+            size="small"
             name="content"
             sx={{
               backgroundColor: "white",
@@ -70,21 +69,27 @@ const CommentEditor = ({ label, comment, addComment, setReplying }) => {
             onChange={handleChange}
             onFocus={handleFocus}
             value={formData.content}
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                handleSubmit();
+              }
+            }}
+            InputProps={{ sx: {  borderRadius: 10 , width:"100%" } }}
           />
-
-          <ErrorAlert error={error} sx={{ my: 4 }} />
-          <Button
+          <IconButton
             variant="outlined"
             type="submit"
             fullWidth
             disabled={loading}
             sx={{
               backgroundColor: "white",
-              mt: 2,
             }}
           >
-            {loading ? <div>Submitting</div> : <div>Submit</div>}
-          </Button>
+            {loading ?  <div style={{fontSize:"12px", color:"#FDC04D"}}>Sending</div> : <RiSendPlaneFill></RiSendPlaneFill>}
+          </IconButton>
+        </HorizontalStack>
+
+          <ErrorAlert error={error} />
         </Box>
       </Stack>
     </Card>

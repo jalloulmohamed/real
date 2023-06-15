@@ -45,7 +45,7 @@ const PostView = () => {
           ) : post ? (
             <Stack spacing={2}>
               <PostCard post={post}  key={post._id} />
-              <Comments />
+              <Comments  />
             </Stack>
           ) : (
             error && <ErrorAlert error={error} />

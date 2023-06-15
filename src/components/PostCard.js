@@ -138,7 +138,7 @@ const PostCard = (props) => {
   
 
   return (
-    <Card sx={{ padding: 0, border: "none" }} className="post-card">
+    <Card sx={{ padding: 0, mt:3, border: "none" }} className="post-card">
       <Box padding={0} className={preview}>
         <HorizontalStack
           spacing={0}
@@ -262,24 +262,31 @@ const PostCard = (props) => {
                   userLikePreview={post.userLikePreview}
                 />
             </Box>
-            <HorizontalStack sx={{ mt: 1, mb: 3 }}>
-              <HorizontalStack
+            <HorizontalStack sx={{ mt:"5px" }}>
+              <LikeBox
+                likeCount={likeCount}
+                liked={post.liked}
+                onLike={handleLike}
+              />
+              <HorizontalStack sx={{ cursor:"pointer"}}
                 onClick={() => navigate("/posts/" + post._id)}
               >
                 <AiFillMessage size={21} color="#D9D9D9" />
                 <Typography
                   variant="subtitle2"
                   color="#D9D9D9"
-                  sx={{ fontWeight: "bold" }}
+              
                 >
                   {post.commentCount}
                 </Typography>
+                <Typography
+                  
+                  color="#D9D9D9"
+                  sx={{ fontSize:"12px" }}
+                >
+                  Comment
+                </Typography>
               </HorizontalStack>
-              <LikeBox
-                likeCount={likeCount}
-                liked={post.liked}
-                onLike={handleLike}
-              />
             </HorizontalStack>
           </PostContentBox>
         </HorizontalStack>
