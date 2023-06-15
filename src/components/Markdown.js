@@ -2,23 +2,23 @@ import { Typography } from "@mui/material";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import "./markdown.css";
+const renderers = {
+  image: ({ src, alt }) => (
+    <img src={src} alt={alt} style={{ maxWidth: '100%', height: 'auto' }} />
+  ),
+};
 
 const Markdown = ({ content }) => {
   const disallowed = ["Image"];
 
   return (
     <Typography sx={{fontSize:"14px",lineHeight:"17px"}} component="span">
-      <ReactMarkdown
+       <ReactMarkdown
         className="markdown"
         disallowedElements={disallowed}
         skipHtml
-        children={content }
-        style={{
-          width: "100%",
-          marginTop: "10px",
-          borderRadius: "10px",
-          "&p": { margin: 0} 
-        }}
+        renderers={renderers}
+        children={content}
       />
     </Typography>
   );
