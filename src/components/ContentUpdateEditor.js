@@ -34,13 +34,14 @@ const ContentUpdateEditor = (props) => {
         <TextField
           value={content}
           fullWidth
-          rows={1}
+          
           size="small"
           name="content"
           sx={{ backgroundColor: "white", fontSize:"10px" , }}
           onChange={handleChange}
           error={error.length !== 0}
           helperText={error}
+          multiline
           id="margin-none"
           InputProps={{ sx: { width:"100%",border:"none" , '&:focus':{outline:"none"} } }}
         />

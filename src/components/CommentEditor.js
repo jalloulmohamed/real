@@ -56,7 +56,7 @@ const CommentEditor = ({ label, comment, addComment, setReplying }) => {
         <Box  component="form" onSubmit={handleSubmit}>
         <HorizontalStack>   
           <TextField
-            multiline
+            rows={1}
             fullWidth
             label="Add comment"
             
