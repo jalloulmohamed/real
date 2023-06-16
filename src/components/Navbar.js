@@ -76,7 +76,7 @@ const Navbar = () => {
     setSearchIcon(!searchIcon);
   };
   console.log(location.pathname)
-  const handleNot= ()=>{
+  const handleNotifcation= ()=>{
     if(location.pathname === "/messenger")
     {
       setNotefication(false);
@@ -86,11 +86,11 @@ const Navbar = () => {
       setNotefication(true);
     }
   }
-  const handleClickNot= ()=>{
+  const handleClickNotifcation= ()=>{
        setNotefication(false);
   }
   useEffect(() => {
-    socket.on("receive-message", handleNot);
+    socket.on("receive-message", handleNotifcation);
   }, []);
 
   return (
@@ -147,7 +147,7 @@ const Navbar = () => {
           </IconButton> */}
           {user ? (
             <>
-              <IconButton onClick={handleClickNot} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
+              <IconButton onClick={handleClickNotifcation} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
                 <AiFillMessage size={24} color="#566376" />
 
               </IconButton>
