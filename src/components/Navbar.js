@@ -40,7 +40,7 @@ const Navbar = () => {
   const [searchIcon, setSearchIcon] = useState(false);
   const [width, setWindowWidth] = useState(0);
   const [notefication, setNotefication] = useState(false);
-  const [pathname, setPatname] = useState("");
+  const [pathnam, setPatname] = useState("");
   const location = useLocation();
 
   useEffect(() => {
@@ -76,13 +76,13 @@ const Navbar = () => {
     setSearchIcon(!searchIcon);
   };
 
-  console.log(pathname)
+  console.log(location)
 
   const handleNotifcation= ()=>{
     
-    if(pathname == 'messenger')
+    if(pathnam === "/messenger")
     {
-      console.log(pathname+"asfdfas")
+      console.log(pathnam+"asfdfas")
 
       setNotefication(false);
     }
