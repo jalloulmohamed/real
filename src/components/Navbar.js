@@ -83,12 +83,11 @@ const Navbar = () => {
     if(pathnam === "/messenger")
     {
       console.log(pathnam+"asfdfas")
-
       setNotefication(false);
     }
     else
     {
-      setNotefication(true);
+      setNotefication(true)
     }
   }
   const handleClickNotifcation= ()=>{
@@ -96,9 +95,12 @@ const Navbar = () => {
   }
   useEffect(() => {
     socket.on("receive-message", handleNotifcation);
+    console.log("socket")
+
   }, []);
   useEffect(() => {
     setPatname(location.pathname)
+    console.log("path")
   }, [location.pathname]);
   return (
     <Container>
