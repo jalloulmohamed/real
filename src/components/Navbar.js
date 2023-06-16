@@ -76,10 +76,11 @@ const Navbar = () => {
     setSearchIcon(!searchIcon);
   };
 
+  console.log(pathname)
 
   const handleNotifcation= ()=>{
     
-    if(pathname === "/messenger")
+    if(pathname === '/messenger')
     {
       setNotefication(false);
     }
