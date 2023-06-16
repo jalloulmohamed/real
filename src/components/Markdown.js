@@ -6,8 +6,12 @@ const renderers = {
   image: ({ src, alt }) => (
     <img src={src} alt={alt} style={{ maxWidth: '100%', height: 'auto' }} />
   ),
+  link: ({ href, children }) => (
+    <a href={href} style={{ color: '#4A92FF'  , textDecoration:"none"}}>
+      {children}
+    </a>
+  ),
 };
-
 const Markdown = ({ content }) => {
   const disallowed = ["Image"];
 
