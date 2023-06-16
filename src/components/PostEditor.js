@@ -60,7 +60,7 @@ const PostEditor = () => {
           <HorizontalStack spacing={2}>
             <UserAvatar width={50} height={50} username={user.username} />
             <Typography color={"#566376"}  variant="h6">
-              What would you like to post today {user.username}?
+                What's new {user.username}?
             </Typography>
           </HorizontalStack>
         )}
@@ -79,7 +79,7 @@ const PostEditor = () => {
           />
           <TextField
             fullWidth
-            label="Content"
+            label="Content  if yo need to share Image use flag this ==> ![Image](img-url)"
             multiline
             rows={10}
             name="content"
