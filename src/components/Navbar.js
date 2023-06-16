@@ -78,7 +78,9 @@ const Navbar = () => {
   
   const handleNot= ()=>{
     if(location.pathname != "/messenger")
+    {
       setNotefication(true);
+    }
   }
   const handleClickNot= ()=>{
        setNotefication(false);
