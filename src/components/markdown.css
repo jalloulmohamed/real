@@ -8,4 +8,8 @@
   width: 100%;
   height: auto;
   border-radius: 5px;
+  text-decoration: none;
+}
+.markdown :last-child a {
+  color: "#4A92FF";
 }
