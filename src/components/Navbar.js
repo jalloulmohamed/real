@@ -80,7 +80,7 @@ const Navbar = () => {
 
   const handleNotifcation= ()=>{
     
-    if(pathname == '/messenger')
+    if(pathname == 'messenger')
     {
       console.log(pathname+"asfdfas")
 
