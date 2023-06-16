@@ -7,7 +7,8 @@ import {
   Typography,
   Button,
   InputAdornment,
-  Image
+  Image,
+  Container
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
@@ -39,7 +40,8 @@ const Navbar = () => {
   const [width, setWindowWidth] = useState(0);
   const [notefication, setNotefication] = useState(false);
   const handleNot= ()=>{
-    setNotefication(!notefication);
+    if(notefication=== true)
+      setNotefication(!notefication);
   }
 
   useEffect(() => {
@@ -80,6 +82,8 @@ const Navbar = () => {
   }, []);
 
   return (
+    <Container>
+
     <Stack mb={2}>
       <Stack
         direction="row"
@@ -166,6 +170,7 @@ const Navbar = () => {
         </Box>
       )}
     </Stack>
+    </Container>
   );
 };
 

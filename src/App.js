@@ -29,6 +29,7 @@ import { initiateSocketConnection, socket } from "./helpers/socketHelper";
 import { useEffect } from "react";
 import { BASE_URL } from "./config";
 import { io } from "socket.io-client";
+import Navbar from "./components/Navbar"
 
 function App() {
   initiateSocketConnection();
@@ -37,6 +38,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <CssBaseline />
+        <Navbar />
         <Routes>
           <Route path="/" element={<ExploreView />} />
           <Route path="/posts/:id" element={<PostView />} />

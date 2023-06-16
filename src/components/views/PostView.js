@@ -37,7 +37,7 @@ const PostView = () => {
 
   return (
     <Container>
-      <Navbar />
+
       <GridLayout
         left={
           loading ? (
