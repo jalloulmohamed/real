@@ -12,7 +12,7 @@ const Markdown = ({ content }) => {
   const disallowed = ["Image"];
 
   return (
-    <Typography sx={{fontSize:"14px",lineHeight:"17px"}} component="span">
+    <Typography sx={{fontSize:"16px",lineHeight:"17px"}} component="span">
        <ReactMarkdown
         className="markdown"
         disallowedElements={disallowed}

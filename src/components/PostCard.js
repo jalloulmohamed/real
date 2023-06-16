@@ -224,7 +224,8 @@ const PostCard = (props) => {
                 fontWeight: "bold",
                 fontSize: "13px",
                 overflow: "hidden",
-                mt: 2,
+                mt: 1,
+                ml:"1px",
                 zIndex: 10,
                 maxWidth: "50%",
                 color: "#FDC04D",
@@ -240,7 +241,7 @@ const PostCard = (props) => {
                 originalContent={post.content}
               />
             ) : (
-              <Box
+              <Box sx={{ mb:"10px" }}
               >
                 <Markdown content={post.content} />
               </Box>
@@ -253,13 +254,9 @@ const PostCard = (props) => {
                 borderRadius: "10px",
               }}
             ></img> */}
-            <Box>
-                <UserLikePreview
-                  postId={post._id}
-                  userLikePreview={post.userLikePreview}
-                />
-            </Box>
-            <HorizontalStack sx={{ mt:"5px" }}>
+            <HorizontalStack mt={2} justifyContent={"space-between"} >
+            <HorizontalStack >
+
               <LikeBox
                 likeCount={likeCount}
                 liked={post.liked}
@@ -284,6 +281,13 @@ const PostCard = (props) => {
                   Comment
                 </Typography>
               </HorizontalStack>
+              </HorizontalStack>
+            <Box>
+                <UserLikePreview
+                  postId={post._id}
+                  userLikePreview={post.userLikePreview}
+                />
+            </Box>
             </HorizontalStack>
           </PostContentBox>
         </HorizontalStack>

@@ -25,7 +25,7 @@ const LikeBox = (props) => {
 
   return (
     <Stack display="flex" flexDirection={"row"} alignItems="center" justifyContent={"center"}>
-      <IconButton sx={{ padding: 0.5 , '&:hover':{backgroundColor:"#fff"}}} onClick={handleLike}>
+      <IconButton sx={{ padding: 0 , '&:hover':{backgroundColor:"#fff"}}} onClick={handleLike}>
         {liked ? (
           <IconContext.Provider  value={{ color: "#fa4748"}}>
             <AiFillHeart size={23} />
