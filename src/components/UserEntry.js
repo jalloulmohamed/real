@@ -9,7 +9,7 @@ const UserEntry = ({ username ,onClose,size}) => {
   
         
   return (
-    <HorizontalStack justifyContent="space-between" key={username}>
+    <HorizontalStack mt={"10px"} justifyContent="space-between" key={username}>
       <HorizontalStack>
         <UserAvatar width={sizeimg} height={sizeimg} username={username} />
         <Typography>{username}</Typography>
