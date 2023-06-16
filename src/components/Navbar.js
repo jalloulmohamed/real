@@ -29,6 +29,7 @@ import HorizontalStack from "./util/HorizontalStack";
 import { FiLogOut } from "react-icons/fi";
 import reactDom from "react-dom";
 import { socket } from "../helpers/socketHelper";
+import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -39,13 +40,9 @@ const Navbar = () => {
   const [searchIcon, setSearchIcon] = useState(false);
   const [width, setWindowWidth] = useState(0);
   const [notefication, setNotefication] = useState(false);
-  const handleNot= ()=>{
-    
-    setNotefication(true);
-  }
-  const handleClickNot= ()=>{
-       setNotefication(false);
-  }
+  const location = useLocation();
+
+
   useEffect(() => {
     updateDimensions();
 
@@ -78,7 +75,14 @@ const Navbar = () => {
   const handleSearchIcon = (e) => {
     setSearchIcon(!searchIcon);
   };
-
+  
+  const handleNot= ()=>{
+    if(location.pathname !== "/messenger")
+      setNotefication(true);
+  }
+  const handleClickNot= ()=>{
+       setNotefication(false);
+  }
   useEffect(() => {
     socket.on("receive-message", handleNot);
   }, []);
