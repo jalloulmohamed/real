@@ -96,6 +96,7 @@ const Navbar = () => {
   useEffect(() => {
     socket.on("receive-message", handleNotifcation);
     console.log("socket")
+    console.log(pathnam)
 
   }, []);
   useEffect(() => {
