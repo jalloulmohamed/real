@@ -82,7 +82,7 @@ const Navbar = () => {
     
     if(pathname == '/messenger')
     {
-      console.log(pathname)
+      console.log(pathname+"asfdfas")
 
       setNotefication(false);
     }
