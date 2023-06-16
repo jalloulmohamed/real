@@ -21,7 +21,7 @@ const UserEntry = ({ username ,onClose,size}) => {
             borderRadius: "5px",
             fontSize: 13,
             textDecoration: 'none',
-          }}>View</Link>
+          }}>view</Link>
     </HorizontalStack>
   );
 };
