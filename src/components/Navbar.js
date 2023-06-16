@@ -40,10 +40,12 @@ const Navbar = () => {
   const [width, setWindowWidth] = useState(0);
   const [notefication, setNotefication] = useState(false);
   const handleNot= ()=>{
-    if(notefication=== true)
-      setNotefication(!notefication);
+    
+    setNotefication(true);
   }
-
+  const handleClickNot= ()=>{
+       setNotefication(false);
+  }
   useEffect(() => {
     updateDimensions();
 
@@ -135,7 +137,7 @@ const Navbar = () => {
           </IconButton> */}
           {user ? (
             <>
-              <IconButton onClick={handleNot} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
+              <IconButton onClick={handleClickNot} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
                 <AiFillMessage size={24} color="#566376" />
 
               </IconButton>
