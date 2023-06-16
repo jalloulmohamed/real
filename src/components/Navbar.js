@@ -79,10 +79,10 @@ const Navbar = () => {
   console.log(location)
 
   const handleNotifcation= ()=>{
+    console.log(pathnam)
     
     if(pathnam === "/messenger")
     {
-      console.log(pathnam+"asfdfas")
       setNotefication(false);
     }
     else
