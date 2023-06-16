@@ -1,13 +1,11 @@
 .markdown :first-child {
   margin-top: 0;
-  margin-left: 1px;
-  margin-right: 0;
-
+  margin-left: 0;
 }
 
 .markdown :last-child {
   margin-bottom: 0;
-  width: calc(100% - 1px);
+  width: 100%;
   height: auto;
   border-radius: 5px;
 }

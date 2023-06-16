@@ -225,7 +225,6 @@ const PostCard = (props) => {
                 fontSize: "13px",
                 overflow: "hidden",
                 mt: 1,
-                ml:"1px",
                 zIndex: 10,
                 maxWidth: "50%",
                 color: "#FDC04D",
@@ -254,7 +253,7 @@ const PostCard = (props) => {
                 borderRadius: "10px",
               }}
             ></img> */}
-            <HorizontalStack mt={2} justifyContent={"space-between"} >
+            <HorizontalStack mt={2}  justifyContent={"space-between"} >
             <HorizontalStack >
 
               <LikeBox
