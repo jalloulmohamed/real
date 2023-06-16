@@ -75,9 +75,13 @@ const Navbar = () => {
   const handleSearchIcon = (e) => {
     setSearchIcon(!searchIcon);
   };
-  
+  console.log(location.pathname)
   const handleNot= ()=>{
-    if(location.pathname !== "/messenger")
+    if(location.pathname === "/messenger")
+    {
+      setNotefication(false);
+    }
+    else
     {
       setNotefication(true);
     }
