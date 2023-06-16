@@ -5,8 +5,8 @@ const Loading = ({ label }) => {
   return (
     <Stack alignItems="center">
       <CircularProgress size={50} sx={{ my: 1 }} />
-      <Typography color="text.secondary" sx={{ mb: 3 }}>
-        {label || "Loading"}
+      <Typography color="#4A92FF" sx={{ mb: 3 }}>
+        {label}
       </Typography>
     </Stack>
   );
