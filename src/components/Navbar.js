@@ -77,7 +77,7 @@ const Navbar = () => {
   };
   
   const handleNot= ()=>{
-    if(location.pathname != "/messenger")
+    if(location.pathname !== "/messenger")
     {
       setNotefication(true);
     }
