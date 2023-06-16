@@ -17,8 +17,8 @@ const UserEntry = ({ username ,onClose,size}) => {
       <Link onClick={onClose} to={"/users/" + username} style={{
             backgroundColor:"#4A92FF",
             color:"#fff",
-            padding:"5px 21px",
-            borderRadius: "6px",
+            padding:"5px 19px",
+            borderRadius: "5px",
             fontSize: 13,
             textDecoration: 'none',
           }}>View</Link>
