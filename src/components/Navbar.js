@@ -40,8 +40,8 @@ const Navbar = () => {
   const [searchIcon, setSearchIcon] = useState(false);
   const [width, setWindowWidth] = useState(0);
   const [notefication, setNotefication] = useState(false);
+  const [pathname, setPatname] = useState("");
   const location = useLocation();
-
 
   useEffect(() => {
     updateDimensions();
@@ -75,9 +75,11 @@ const Navbar = () => {
   const handleSearchIcon = (e) => {
     setSearchIcon(!searchIcon);
   };
-  console.log(location.pathname)
+
+
   const handleNotifcation= ()=>{
-    if(location.pathname === "/messenger")
+    
+    if(pathname === "/messenger")
     {
       setNotefication(false);
     }
@@ -92,7 +94,9 @@ const Navbar = () => {
   useEffect(() => {
     socket.on("receive-message", handleNotifcation);
   }, []);
-
+  useEffect(() => {
+    setPatname(location.pathname)
+  }, [location.pathname]);
   return (
     <Container>
 
