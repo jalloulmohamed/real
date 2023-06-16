@@ -118,7 +118,7 @@ const Messages = (props) => {
 
   const handleReceiveMessage = (senderId, username, content) => {
     const newMessage = { direction: "to", content };
-
+    
     const conversation = props.getConversation(
       conversationsRef.current,
       senderId

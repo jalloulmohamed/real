@@ -9,7 +9,7 @@ const theme = createTheme({
       styleOverrides: {
         root: ({ ownerState, theme }) => ({
           ...{
-            padding: theme.spacing(2),
+            padding: theme.spacing(1),
             borderWidth: "1.5px",
           },
         }),

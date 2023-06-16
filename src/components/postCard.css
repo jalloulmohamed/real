@@ -14,3 +14,17 @@ html {
 
 
 
+.notificationDot {
+  position: relative;
+}
+
+.notificationDot::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: red;
+}

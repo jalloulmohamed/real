@@ -13,6 +13,7 @@ import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import "react-icons/ai";
 import "react-icons/ri";
+import "./postCard.css";
 import {
   AiFillFileText,
   AiFillHome,
@@ -26,6 +27,7 @@ import UserAvatar from "./UserAvatar";
 import HorizontalStack from "./util/HorizontalStack";
 import { FiLogOut } from "react-icons/fi";
 import reactDom from "react-dom";
+import { socket } from "../helpers/socketHelper";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -35,6 +37,10 @@ const Navbar = () => {
   const [search, setSearch] = useState("");
   const [searchIcon, setSearchIcon] = useState(false);
   const [width, setWindowWidth] = useState(0);
+  const [notefication, setNotefication] = useState(false);
+  const handleNot= ()=>{
+    setNotefication(!notefication);
+  }
 
   useEffect(() => {
     updateDimensions();
@@ -68,6 +74,10 @@ const Navbar = () => {
   const handleSearchIcon = (e) => {
     setSearchIcon(!searchIcon);
   };
+
+  useEffect(() => {
+    socket.on("receive-message", handleNot);
+  }, []);
 
   return (
     <Stack mb={2}>
@@ -121,10 +131,11 @@ const Navbar = () => {
           </IconButton> */}
           {user ? (
             <>
-              <IconButton component={Link} to={"/messenger"}>
+              <IconButton onClick={handleNot} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
                 <AiFillMessage size={24} color="#566376" />
+
               </IconButton>
-              <IconButton onClick={handleLogout}>
+              <IconButton  onClick={handleLogout}>
                 <FiLogOut size={22} color="#566376" ></FiLogOut>
               </IconButton>
               <IconButton component={Link}  to={"/users/" + username}>
