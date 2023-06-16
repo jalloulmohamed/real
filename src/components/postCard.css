@@ -28,3 +28,13 @@ html {
   border-radius: 50%;
   background-color: red;
 }
+
+
+.navbarsow
+{
+  display: block;
+}
+.notnavbarsow
+{
+  display: none;
+}

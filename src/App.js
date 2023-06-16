@@ -34,18 +34,6 @@ import Navbar from "./components/Navbar"
 
 function App() {
   initiateSocketConnection();
-  const [navshow,setNavshow]=useState(true);
-  const location = useLocation();
-  useEffect(() =>{
-    if(location.pathname=== "/messenger")
-    {
-      setNavshow(false)
-    }
-    else
-    {
-      setNavshow(true)
-    }
-  },[location.pathname])
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
