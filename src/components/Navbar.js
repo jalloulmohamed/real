@@ -82,6 +82,8 @@ const Navbar = () => {
     
     if(pathname == '/messenger')
     {
+      console.log(pathname)
+
       setNotefication(false);
     }
     else
