@@ -79,7 +79,7 @@ const Navbar = () => {
     setSearchIcon(!searchIcon);
   };
 
-  const handleNotifcation= ()=>{
+  const handleNotifcation= (senderId, user, content)=>{
     // console.log(location.pathname)
     if(location.pathname =='/messenger')
     {
@@ -89,6 +89,10 @@ const Navbar = () => {
     {
       const audio = new Audio('/notification.mp3');
       audio.play();
+      const notification = new Notification('Message from' + user, {
+        body: content,
+        icon: '/logo.svg',
+      });
       setNotefication(true)
     }
   }
