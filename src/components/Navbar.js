@@ -100,7 +100,7 @@ const Navbar = () => {
 
   return (
     <>
-        <Container >
+        
           <Stack mb={2}>
             <Stack
               direction="row"
@@ -187,7 +187,6 @@ const Navbar = () => {
               </Box>
             )}
           </Stack>
-          </Container>
 
     </>
   );

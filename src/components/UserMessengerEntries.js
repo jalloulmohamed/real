@@ -19,9 +19,9 @@ const UserMessengerEntries = (props) => {
             sx={{ height: "60px" }}
             color="#566376"
           >
-            <AiFillMessage size={30} />
-            <Typography>
-              <b>Your Conversations</b>
+            
+            <Typography sx={{fontSize:"20px"}} size={30}>
+              <b>Chat</b>
             </Typography>
           </HorizontalStack>
           <Box sx={{ height: "calc(100vh - 146px)"}}>
