@@ -84,11 +84,11 @@ const Navbar = () => {
     if(location.pathname =='/messenger')
     {
       setNotefication(false);
-      const audio = new Audio('/notification.mp3');
-      audio.play();
     }
     else
     {
+      const audio = new Audio('/notification.mp3');
+      audio.play();
       setNotefication(true)
     }
   }
