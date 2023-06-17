@@ -80,7 +80,7 @@ const Navbar = () => {
   };
 
   const handleNotifcation= ()=>{
-    console.log(location.pathname)
+    // console.log(location.pathname)
     if(location.pathname =='/messenger')
     {
       setNotefication(false);
@@ -89,6 +89,8 @@ const Navbar = () => {
     {
       setNotefication(true)
     }
+    const audio = new Audio('/notification.mp3');
+    audio.play();
   }
 
   const handleClickNotifcation= ()=>{
