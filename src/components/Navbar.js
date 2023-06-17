@@ -93,6 +93,7 @@ const Navbar = () => {
         body: content,
         icon: '/logo.svg',
       });
+      notefication.play()
       setNotefication(true)
     }
   }
