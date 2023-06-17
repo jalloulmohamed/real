@@ -79,31 +79,36 @@ const Navbar = () => {
     setSearchIcon(!searchIcon);
   };
 
-  const handleNotifcation= (senderId, user, content)=>{
-    // console.log(location.pathname)
-    if(location.pathname =='/messenger')
-    {
-      setNotefication(false);
-    }
-    else
-    {
+  const handleNotification = (senderId, user, content) => {
+    if (location.pathname === '/messenger') {
+      setNotification(false);
+    } else {
+      setNotification(true);
+  
       const audio = new Audio('/notification.mp3');
       audio.play();
-      const notification = new Notification('Message from' + user, {
-        body: content,
-        icon: '/logo.svg',
-      });
-      notefication.play()
-      setNotefication(true)
+  
+      if (Notification.permission === 'granted') {
+        const notification = new Notification('Message from ' + user, {
+          body: content,
+          icon: '/logo.svg',
+        });
+      }
     }
-  }
-
-  const handleClickNotifcation= ()=>{
-       setNotefication(false);
-  }
+  };
+  
+  const handleClickNotification = () => {
+    setNotification(false);
+  };
+  
   useEffect(() => {
-    socket.on("receive-message", handleNotifcation);
+    socket.on('receive-message', handleNotification);
+  
+    return () => {
+      socket.off('receive-message', handleNotification);
+    };
   }, []);
+  
 
 
   return (
@@ -160,7 +165,7 @@ const Navbar = () => {
                 </IconButton> */}
                 {user ? (
                   <>
-                    <IconButton onClick={handleClickNotifcation} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
+                    <IconButton onClick={handleClickNotification} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
                       <AiFillMessage size={24} color="#566376" />
 
                     </IconButton>
