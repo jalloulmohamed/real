@@ -39,7 +39,7 @@ const FindUsers = () => {
       <Stack spacing={2}>
         <HorizontalStack justifyContent="space-between">
           <HorizontalStack>
-            <AiOutlineUser  size={19}/>
+            
             <Typography color={"#A5A7B4"}>Find Others</Typography>
           </HorizontalStack>
           <IconButton
