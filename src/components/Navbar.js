@@ -93,7 +93,17 @@ const Navbar = () => {
           body: content,
           icon: '/logo.svg',
         });
+      } else if (Notification.permission !== 'denied') {
+        Notification.requestPermission().then((permission) => {
+          if (permission === 'granted') {
+            const notification = new Notification('Message from ' + user, {
+              body: content,
+              icon: '/logo.svg',
+            });
+          }
+        });
       }
+      
     }
   };
   
