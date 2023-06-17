@@ -81,9 +81,9 @@ const Navbar = () => {
 
   const handleNotification = (senderId, user, content) => {
     if (location.pathname === '/messenger') {
-      setNotification(false);
+      setNotefication(false);
     } else {
-      setNotification(true);
+      setNotefication(true);
   
       const audio = new Audio('/notification.mp3');
       audio.play();
@@ -98,7 +98,7 @@ const Navbar = () => {
   };
   
   const handleClickNotification = () => {
-    setNotification(false);
+    setNotefication(false);
   };
   
   useEffect(() => {
