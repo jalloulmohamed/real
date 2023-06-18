@@ -16,7 +16,7 @@ const UserMessengerEntries = (props) => {
             alignItems="center"
             spacing={2}
             
-            sx={{ height: "60px" }}
+            sx={{ height: "30px" }}
             color="#566376"
           >
             
