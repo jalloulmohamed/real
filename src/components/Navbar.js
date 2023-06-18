@@ -77,34 +77,35 @@ const Navbar = () => {
   const handleSearchIcon = (e) => {
     setSearchIcon(!searchIcon);
   };
-console.log(location.pathname)
+// console.log(location.pathname)
   const handleNotification = (senderId, user, content) => {
-    console.log(location.pathname)
-    if (location.pathname === '/messenger') {
-      setNotefication(false);
-    } else {
-      setNotefication(true);
+    // console.log(location.pathname)
+    // if (location.pathname === '/messenger') {
+    //   setNotefication(false);
+    // } else {
+    //   setNotefication(true);
   
-      const audio = new Audio('/notification.mp3');
-      audio.play();
+    //   const audio = new Audio('/notification.mp3');
+    //   audio.play();
   
-      // if (Notification.permission === 'granted') {
-      //   const notification = new Notification('Message from ' + user, {
-      //     body: content,
-      //     icon: '/logo.svg',
-      //   });
-      // } else if (Notification.permission !== 'denied') {
-      //   Notification.requestPermission().then((permission) => {
-      //     if (permission === 'granted') {
-      //       const notification = new Notification('Message from ' + user, {
-      //         body: content,
-      //         icon: '/logo.svg',
-      //       });
-      //     }
-      //   });
-      // }
+    //   // if (Notification.permission === 'granted') {
+    //   //   const notification = new Notification('Message from ' + user, {
+    //   //     body: content,
+    //   //     icon: '/logo.svg',
+    //   //   });
+    //   // } else if (Notification.permission !== 'denied') {
+    //   //   Notification.requestPermission().then((permission) => {
+    //   //     if (permission === 'granted') {
+    //   //       const notification = new Notification('Message from ' + user, {
+    //   //         body: content,
+    //   //         icon: '/logo.svg',
+    //   //       });
+    //   //     }
+    //   //   });
+    //   // }
+    console.log("ok")
       
-    }
+    // }
   };
   
   const handleClickNotification = () => {
