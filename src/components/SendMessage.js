@@ -26,8 +26,8 @@ const SendMessage = (props) => {
       sx={{
         my:1,
           paddingLeft: {
-            md: '20px',
-            xs: '0',
+            md: '15px',
+            xs: '10px',
           }, 
       }}
       justifyContent="space-between"

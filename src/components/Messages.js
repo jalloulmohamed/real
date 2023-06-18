@@ -183,7 +183,7 @@ const Messages = (props) => {
             {props.mobile && (
               <IconButton
                 onClick={() => props.setConservant(null)}
-                sx={{ padding: 0 }}
+                sx={{ padding: 0 ,marginLeft:"16px"}}
               >
                 <AiFillCaretLeft />
               </IconButton>

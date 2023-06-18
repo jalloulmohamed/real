@@ -34,13 +34,15 @@ import Navbar from "./components/Navbar"
 
 function App() {
   initiateSocketConnection();
+
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <CssBaseline />
+        <Navbar/>
         <Routes>
           <Route path="/" element={<ExploreView />} />
-          <Route path="/posts/:id" element={<PostView />} />
+          {/* <Route path="/posts/:id" element={<PostView />} />
           <Route
             path="/posts/create"
             element={
@@ -48,7 +50,7 @@ function App() {
                 <CreatePostView />
               </PrivateRoute>
             }
-          />
+          /> */}
           <Route
             path="/messenger"
             element={
@@ -57,7 +59,7 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route path="/search" element={<SearchView />} />
+          {/* <Route path="/search" element={<SearchView />} /> */}
           <Route path="/users/:id" element={<ProfileView />} />
           <Route path="/login" element={<LoginView />} />
           <Route path="/signup" element={<SignupView />} />

@@ -63,8 +63,6 @@ const MessengerView = () => {
 
   return (
     <Container>
-      {(!mobile || !conservant ) &&  <Navbar  />}
-      
       <Box >
         <Card sx={{ padding: 0 ,border:0 }}>
           <Grid
@@ -126,7 +124,7 @@ const MessengerView = () => {
                 </Box>
               </Grid>
             ) : (
-              <Grid  xs={12} sx={{ height: "100%" }}>
+              <Grid  xs={12} sx={{ height: "100%"  ,position:"absolute", top:0 ,right:0 ,left:0 ,bottom:0,bgcolor:"#ffff"}}>
                 <Messages
                   conservant={conservant}
                   conversations={conversations}
