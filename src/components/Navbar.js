@@ -88,21 +88,21 @@ const Navbar = () => {
       const audio = new Audio('/notification.mp3');
       audio.play();
   
-      if (Notification.permission === 'granted') {
-        const notification = new Notification('Message from ' + user, {
-          body: content,
-          icon: '/logo.svg',
-        });
-      } else if (Notification.permission !== 'denied') {
-        Notification.requestPermission().then((permission) => {
-          if (permission === 'granted') {
-            const notification = new Notification('Message from ' + user, {
-              body: content,
-              icon: '/logo.svg',
-            });
-          }
-        });
-      }
+      // if (Notification.permission === 'granted') {
+      //   const notification = new Notification('Message from ' + user, {
+      //     body: content,
+      //     icon: '/logo.svg',
+      //   });
+      // } else if (Notification.permission !== 'denied') {
+      //   Notification.requestPermission().then((permission) => {
+      //     if (permission === 'granted') {
+      //       const notification = new Notification('Message from ' + user, {
+      //         body: content,
+      //         icon: '/logo.svg',
+      //       });
+      //     }
+      //   });
+      // }
       
     }
   };
@@ -113,6 +113,10 @@ const Navbar = () => {
   
   useEffect(() => {
     socket.on('receive-message', handleNotification);
+  
+    return () => {
+      socket.off('receive-message', handleNotification);
+    };
   }, []);
   
 
