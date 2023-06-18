@@ -86,8 +86,14 @@ const Navbar = () => {
     {
       setNotefication(true);
       const audio = new Audio('/notification.mp3');
-      await audio.play();
-      console.log("ok")
+      if (Notification.permission === "granted") {
+        await audio.play();
+      } else if (Notification.permission !== "denied") {
+        const permission = await Notification.requestPermission();
+        if (permission === "granted") {
+          await audio.play();
+        }
+      }
     }
   };
   
