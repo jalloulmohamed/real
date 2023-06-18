@@ -90,14 +90,15 @@ const UserLikeModal = ({ postId, open, setOpen }) => {
                 overflowY:"scroll",
                 '&::-webkit-scrollbar':{
                     display: "none",
-                  }
+                  },
+                p:"10px"
             }}
             ref={scrollBoxRef}
             onClick={(e) => {
             e.stopPropagation();
         }}
         >
-                <Typography    sx={{textAlign:"center",mb:"10px"} } color="text.secondary" >
+                <Typography    sx={{textAlign:"center",mb:"15px"} } color="text.secondary" >
                     Likes
                 </Typography>
             <Stack>
