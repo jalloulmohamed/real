@@ -80,8 +80,7 @@ const Navbar = () => {
   };
 
   const handleNotification = (senderId, user, content) => {
-    console.log(location.pathname)
-    if (location.pathname === '/messenger') {
+    if (pathnam === '/messenger') {
       setNotefication(false);
     } else {
       setNotefication(true);
@@ -116,6 +115,10 @@ const Navbar = () => {
     socket.on('receive-message', handleNotification);
   
   }, []);
+  useEffect(() => {
+    setPatname(location.pathname)
+  
+  }, [location.pathname]);
   
 
 
