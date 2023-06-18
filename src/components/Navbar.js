@@ -117,7 +117,7 @@ const Navbar = () => {
 
   useEffect(() => {
     console.log(location);
-    setPatname(location).pathname;
+    setPatname(location.pathname);
   }, [location]);
   
   useEffect(() => {
