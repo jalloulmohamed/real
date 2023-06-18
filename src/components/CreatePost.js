@@ -34,7 +34,7 @@ const CreatePost = () => {
                 md: '7px'
               },
               px:{
-                md:'10px',
+                md:'14px',
                 xs:'14px',
               },
 
