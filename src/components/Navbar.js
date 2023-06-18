@@ -22,7 +22,7 @@ import {
   AiOutlineSearch,
 } from "react-icons/ai";
 import {IoSearchOutline} from "react-icons/io5"
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { isLoggedIn, logoutUser } from "../helpers/authHelper";
 import UserAvatar from "./UserAvatar";
 import HorizontalStack from "./util/HorizontalStack";
@@ -41,7 +41,7 @@ const Navbar = () => {
   const [width, setWindowWidth] = useState(0);
   const [notefication, setNotefication] = useState(false);
   const [pathnam, setPatname] = useState("");
-  const location = useLocation();
+  const location = useParams();
  
 
 

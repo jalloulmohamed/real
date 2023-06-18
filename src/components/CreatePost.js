@@ -29,7 +29,7 @@ const CreatePost = () => {
               }
             }}
           >
-            <FiFeather size={20} color="#fff"  />
+            <FiFeather size={22} color="#fff"  />
             <span style={{marginLeft:5}} >New Post</span>
           </Button>
     </>
