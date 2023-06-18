@@ -126,7 +126,7 @@ const Navbar = () => {
   useEffect(() => {
     socket.on('receive-message', handleNotification);
   
-  }, []);
+  }, [pathname]);
   
 
 
