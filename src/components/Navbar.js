@@ -121,6 +121,7 @@ const Navbar = () => {
   }, []);
   useEffect(() => {
     setPatname(location.pathname)
+    console.log("cange")
   
   }, [location]);
   
