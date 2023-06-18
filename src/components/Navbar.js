@@ -78,7 +78,7 @@ const Navbar = () => {
     setSearchIcon(!searchIcon);
   };
 // console.log(location.pathname)
-  const handleNotification = (senderId, user, content) => {
+  const handleNotification = async (senderId, user, content) => {
     // console.log(location.pathname)
     // if (location.pathname === '/messenger') {
     //   setNotefication(false);
@@ -86,7 +86,7 @@ const Navbar = () => {
       setNotefication(true);
   
       const audio = new Audio('/notification.mp3');
-      audio.play();
+      await audio.play();
   
     //   // if (Notification.permission === 'granted') {
     //   //   const notification = new Notification('Message from ' + user, {
