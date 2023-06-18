@@ -77,35 +77,18 @@ const Navbar = () => {
   const handleSearchIcon = (e) => {
     setSearchIcon(!searchIcon);
   };
-// console.log(location.pathname)
+
   const handleNotification = async (senderId, user, content) => {
-    // console.log(location.pathname)
-    // if (location.pathname === '/messenger') {
-    //   setNotefication(false);
-    // } else {
+    
+    const currentPathname = window.location.pathname;
+    console.log(currentPathname)
       setNotefication(true);
   
       const audio = new Audio('/notification.mp3');
       await audio.play();
-  
-    //   // if (Notification.permission === 'granted') {
-    //   //   const notification = new Notification('Message from ' + user, {
-    //   //     body: content,
-    //   //     icon: '/logo.svg',
-    //   //   });
-    //   // } else if (Notification.permission !== 'denied') {
-    //   //   Notification.requestPermission().then((permission) => {
-    //   //     if (permission === 'granted') {
-    //   //       const notification = new Notification('Message from ' + user, {
-    //   //         body: content,
-    //   //         icon: '/logo.svg',
-    //   //       });
-    //   //     }
-    //   //   });
-    //   // }
     console.log("ok")
       
-    // }
+
   };
   
   const handleClickNotification = () => {
