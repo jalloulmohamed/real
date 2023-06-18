@@ -37,7 +37,9 @@ const PostView = () => {
 
   return (
     <Container>
-          {loading ? (
+      <GridLayout
+        left={
+          loading ? (
             <Loading />
           ) : post ? (
             <Stack spacing={2}>
@@ -46,7 +48,10 @@ const PostView = () => {
             </Stack>
           ) : (
             error && <ErrorAlert error={error} />
-          )}
+          )
+        }
+        right={<Sidebar />}
+      />
     </Container>
   );
 };

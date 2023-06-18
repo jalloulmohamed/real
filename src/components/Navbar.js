@@ -30,7 +30,7 @@ import { FiLogOut } from "react-icons/fi";
 import reactDom from "react-dom";
 import { socket } from "../helpers/socketHelper";
 import { useLocation } from 'react-router-dom';
-
+import CreatePost from "./CreatePost";
 const Navbar = () => {
   const navigate = useNavigate();
   const user = isLoggedIn();
@@ -176,6 +176,7 @@ const Navbar = () => {
                 </IconButton> */}
                 {user ? (
                   <>
+
                     <IconButton onClick={handleClickNotification} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
                       <AiFillMessage size={24} color="#566376" />
 

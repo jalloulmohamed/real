@@ -42,7 +42,7 @@ function App() {
         <Navbar/>
         <Routes  >
           <Route path="/" element={<ExploreView />} />
-          {/* <Route path="/posts/:id" element={<PostView />} />
+          <Route path="/posts/:id" element={<PostView />} />
           <Route
             path="/posts/create"
             element={
@@ -50,7 +50,7 @@ function App() {
                 <CreatePostView />
               </PrivateRoute>
             }
-          /> */}
+          />
           <Route
             path="/messenger"
             element={

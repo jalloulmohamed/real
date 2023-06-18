@@ -9,7 +9,7 @@ import Sidebar from "../Sidebar";
 const CreatePostView = () => {
   return (
     <Container>
-      <PostEditor />
+      <GridLayout left={<PostEditor />} right={<Sidebar />} />
     </Container>
   );
 };
