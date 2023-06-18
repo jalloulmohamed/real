@@ -29,14 +29,14 @@ const CreatePost = () => {
               bottom:15,
               right:15,
               zIndex:999,
+              p:{
+                xs:'14px',
+                md: '7px'
+              },
               px:{
                 md:'10px',
    
               },
-              p:{
-                xs:'14px',
-                md: '7px'
-              }
 
               
             }}
