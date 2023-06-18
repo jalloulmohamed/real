@@ -86,9 +86,7 @@ const Navbar = () => {
     {
       setNotefication(true);
       const audio = new Audio('/notification.mp3');
-      document.addEventListener('click', async () => {
-        await audio.play();
-      });
+      await audio.play();
       console.log("ok")
     }
   };
@@ -99,7 +97,9 @@ const Navbar = () => {
   
   useEffect(() => {
     socket.on('receive-message', handleNotification);
-
+    return () => {
+      socket.off('receive-message', handleNotification);
+    };
   }, []);
   
 
