@@ -86,7 +86,9 @@ const Navbar = () => {
     {
       setNotefication(true);
       const audio = new Audio('/notification.mp3');
-      await audio.play();
+      document.addEventListener('click', async () => {
+        await audio.play();
+      });
       console.log("ok")
     }
   };
