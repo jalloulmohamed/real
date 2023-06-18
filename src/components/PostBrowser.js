@@ -117,8 +117,8 @@ const PostBrowser = (props) => {
 
   return (
     <>
-      <Stack  padding={0}  >
-        <Card sx={{ border: 'none' , padding: 0 ,paddingRight:{md:3,xs:0}  }}>
+      <Stack sx={{position:"relative"}}   padding={0}  >
+        <Card  sx={{ border: 'none'  , padding: 0 ,paddingRight:{md:3,xs:0}  }}>
           <HorizontalStack  justifyContent="space-between">
             {/* <SortBySelect
               onSortBy={handleSortBy}
@@ -127,7 +127,6 @@ const PostBrowser = (props) => {
             /> */}
             <div></div>
             {props.createPost && <CreatePost />}
-            
           </HorizontalStack>
         </Card>
 

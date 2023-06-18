@@ -1,18 +1,16 @@
-import { Button } from "@mui/material";
+import { Button, Container, IconButton,Typography } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FiFeather } from "react-icons/fi";
 import PrivateRoute from "./PrivateRoute";
 import CreatePostView from "./views/CreatePostView";
+import zIndex from "@mui/material/styles/zIndex";
 const CreatePost = () => {
   const navigate = useNavigate();
   return (
-    <>
-        
-          {/* <PrivateRoute>
-                    <CreatePostView />
-          </PrivateRoute> */}
-          <Button
+    <Container>
+
+          <IconButton
             variant="outlined"
             size="medium"
             onClick={() => navigate("/posts/create")}
@@ -26,13 +24,32 @@ const CreatePost = () => {
               '&:hover': {
                 backgroundColor: '#FDC04D',
                 border:"none",
+              },
+              position:"fixed",
+              bottom:15,
+              right:15,
+              zIndex:999,
+              px:{
+                md:'10px',
+   
+              },
+              p:{
+                xs:'14px',
+                md: '10px'
               }
+
+              
             }}
           >
-            <FiFeather size={22} color="#fff"  />
-            <span style={{marginLeft:5}} >New Post</span>
-          </Button>
-    </>
+            <FiFeather size={25} color="#fff"  />
+            <Typography sx={{marginLeft:"5px", 
+                display:{
+                md: 'block',
+                xs: 'none',
+              }}} >
+              New Post</Typography>
+          </IconButton>
+    </Container>
   );
 };
 
