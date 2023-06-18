@@ -124,16 +124,17 @@ const Navbar = () => {
               spacing={!mobile ? 2 : 0}
             >
               <HorizontalStack alignItems="end"  sx={{ textDecoration: 'none' }}  component={Link}  to={"/"}>
-                <Box >
+                <Box sx={{ display: mobile ? "none" : "block" }}>
                 <img src="/logo.svg" alt="Image" width={26} />
                 </Box>
                 <Typography
-                  sx={{ display: mobile ? "none" : "block" }}
+                  sx={{ display: mobile ? "block" : "none" }}
                   variant={navbarWidth ? "h5" : "h5"}
                   color="#566376"
                 >
                   {/* <Link to="/" color="inherit"> */}
-                    eal
+                  
+                    Real
                   {/* </Link> */}
                 </Typography>
               </HorizontalStack>
