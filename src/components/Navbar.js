@@ -81,14 +81,14 @@ const Navbar = () => {
   const handleNotification = async (senderId, user, content) => {
     
     const currentPathname = window.location.pathname;
-    console.log(currentPathname)
+
+    if(currentPathname!== "/messenger")
+    {
       setNotefication(true);
-  
       const audio = new Audio('/notification.mp3');
       await audio.play();
-    console.log("ok")
-      
-
+      console.log("ok")
+    }
   };
   
   const handleClickNotification = () => {
@@ -97,9 +97,7 @@ const Navbar = () => {
   
   useEffect(() => {
     socket.on('receive-message', handleNotification);
-    return () => {
-      socket.off('receive-message', handleNotification);
-    };
+
   }, []);
   
 
