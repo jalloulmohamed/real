@@ -40,7 +40,7 @@ function App() {
       <BrowserRouter>
         <CssBaseline />
         <Navbar/>
-        <Routes>
+        <Routes  >
           <Route path="/" element={<ExploreView />} />
           {/* <Route path="/posts/:id" element={<PostView />} />
           <Route

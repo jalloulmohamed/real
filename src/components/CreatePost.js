@@ -9,9 +9,9 @@ const CreatePost = () => {
   return (
     <>
         
-          <PrivateRoute>
+          {/* <PrivateRoute>
                     <CreatePostView />
-          </PrivateRoute>
+          </PrivateRoute> */}
           <Button
             variant="outlined"
             size="medium"

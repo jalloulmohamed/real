@@ -12,8 +12,6 @@ import PostCard from "./PostCard";
 import SortBySelect from "./SortBySelect";
 import HorizontalStack from "./util/HorizontalStack";
 import {AiOutlineReload} from 'react-icons/ai'
-import PostView from "./views/PostView";
-
 
 const PostBrowser = (props) => {
   const [posts, setPosts] = useState([]);
@@ -180,7 +178,6 @@ const PostBrowser = (props) => {
           )
         )}
       </Stack>
-      <PostView/>
     </>
   );
 };
