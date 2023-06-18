@@ -22,7 +22,7 @@ import {
   AiOutlineSearch,
 } from "react-icons/ai";
 import {IoSearchOutline} from "react-icons/io5"
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { isLoggedIn, logoutUser } from "../helpers/authHelper";
 import UserAvatar from "./UserAvatar";
 import HorizontalStack from "./util/HorizontalStack";
@@ -41,7 +41,7 @@ const Navbar = () => {
   const [width, setWindowWidth] = useState(0);
   const [notefication, setNotefication] = useState(false);
   const [pathnam, setPatname] = useState("");
-  const location = useParams();
+  const location = useLocation();
  
 
 
@@ -78,13 +78,12 @@ const Navbar = () => {
   const handleSearchIcon = (e) => {
     setSearchIcon(!searchIcon);
   };
-
   const handleNotification = (senderId, user, content) => {
-    console.log(pathnam)
+
+    
+
     console.log(location.pathname)
-
-
-    if (pathnam === '/messenger') {
+    if (location.pathname === '/messenger') {
       setNotefication(false);
     } else {
       setNotefication(true);
@@ -116,12 +115,9 @@ const Navbar = () => {
   };
   
   useEffect(() => {
-    setPatname(location.pathname)
-    console.log(pathnam)
-    console.log(location.pathname)
   
   
-  }, [location]);
+  }, [location.pathname]);
   useEffect(() => {
     socket.on('receive-message', handleNotification);
   
