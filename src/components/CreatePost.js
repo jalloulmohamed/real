@@ -19,16 +19,17 @@ const CreatePost = () => {
             sx={{ 
               gap: "0.2rem",
               whiteSpace: "nowrap",
-              color:"#566376",
+              color:"#fff",
+              backgroundColor: '#FDC04D',
               border:"none",
+              borderRadius:"50px",
               '&:hover': {
-                backgroundColor: '#fff',
-                color: '#FDC04D',
+                backgroundColor: '#FDC04D',
                 border:"none",
               }
             }}
           >
-            <FiFeather size={24} color="#FDC04D"  />
+            <FiFeather size={20} color="#fff"  />
             <span style={{marginLeft:5}} >New Post</span>
           </Button>
     </>
