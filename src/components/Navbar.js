@@ -116,14 +116,14 @@ const Navbar = () => {
   };
   
   useEffect(() => {
+    setPatname(location.pathname)
+    console.log(pathnam)
+  
+  }, [location]);
+  useEffect(() => {
     socket.on('receive-message', handleNotification);
   
   }, []);
-  useEffect(() => {
-    setPatname(location.pathname)
-    console.log("cange")
-  
-  }, [location]);
   
 
 
