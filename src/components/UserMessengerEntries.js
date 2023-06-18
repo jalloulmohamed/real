@@ -16,7 +16,7 @@ const UserMessengerEntries = (props) => {
             alignItems="center"
             spacing={2}
             
-            sx={{ height: "30px" }}
+            sx={{ height: "40px" }}
             color="#566376"
           >
             
@@ -24,7 +24,7 @@ const UserMessengerEntries = (props) => {
               <b>Chat</b>
             </Typography>
           </HorizontalStack>
-          <Box sx={{ height: "calc(100vh - 146px)"}}>
+          <Box sx={{ height: "calc(100vh - 126px)"}}>
             <Box sx={{ height: "100%" }}>
               <List sx={{ padding: 0, maxHeight: "100%", overflowY: "auto" ,'&::-webkit-scrollbar': {display:"none"}}}>
                 {props.conversations.map((conversation) => (
