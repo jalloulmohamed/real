@@ -80,6 +80,10 @@ const Navbar = () => {
   };
 
   const handleNotification = (senderId, user, content) => {
+    console.log(pathnam)
+    console.log(location.pathname)
+
+
     if (pathnam === '/messenger') {
       setNotefication(false);
     } else {
