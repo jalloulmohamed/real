@@ -113,10 +113,6 @@ const Navbar = () => {
   
   useEffect(() => {
     socket.on('receive-message', handleNotification);
-  
-    return () => {
-      socket.off('receive-message', handleNotification);
-    };
   }, []);
   
 
