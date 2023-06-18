@@ -83,10 +83,10 @@ const Navbar = () => {
     // if (location.pathname === '/messenger') {
     //   setNotefication(false);
     // } else {
-    //   setNotefication(true);
+      setNotefication(true);
   
-    //   const audio = new Audio('/notification.mp3');
-    //   audio.play();
+      const audio = new Audio('/notification.mp3');
+      audio.play();
   
     //   // if (Notification.permission === 'granted') {
     //   //   const notification = new Notification('Message from ' + user, {
