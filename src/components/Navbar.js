@@ -113,7 +113,9 @@ console.log(location.pathname)
   
   useEffect(() => {
     socket.on('receive-message', handleNotification);
-  
+    return () => {
+      socket.off('receive-message', handleNotification);
+    };
   }, []);
   
 
