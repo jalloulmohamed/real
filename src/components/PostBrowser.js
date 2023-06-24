@@ -155,9 +155,9 @@ const PostBrowser = (props) => {
           <Stack py={5} alignItems="center">
             <Typography variant="h5" color="text.secondary" gutterBottom>
               {posts.length > 0 ? (
-                <>All posts have been viewed</>
+                <>All  have been viewed</>
               ) : (
-                <>No posts available</>
+                <>No  available</>
               )}
             </Typography>
             <Button  sx={{color:"#FDC04D"}}  variant="text" size="small" onClick={handleBackToTop}>

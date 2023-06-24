@@ -30,12 +30,12 @@ const CreatePost = () => {
               right:15,
               zIndex:999,
               py:{
-                xs:'14px',
+                xs:'12px',
                 md: '7px'
               },
               px:{
-                md:'14px',
-                xs:'14px',
+                md:'12px',
+                xs:'12px',
               },
 
               
