@@ -7,7 +7,7 @@ const UserAvatar = ({ username, height, width }) => {
       sx={{
         height: height,
         width: width,
-        backgroundColor: "lightgray",
+        backgroundColor: "#dddddd",
       }}
       src={"https://robohash.org/" + username+ "?set=set5" }
     />
