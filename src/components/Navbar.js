@@ -40,9 +40,8 @@ const Navbar = () => {
   const [searchIcon, setSearchIcon] = useState(false);
   const [width, setWindowWidth] = useState(0);
   const [notefication, setNotefication] = useState(false);
-  const location = useLocation();
- 
-
+  const [login,setLogin] = useState(true) 
+  const currentPathname = window.location.pathname;
 
 
   useEffect(() => {
@@ -80,8 +79,6 @@ const Navbar = () => {
 
   const handleNotification = async (senderId, user, content) => {
     
-    const currentPathname = window.location.pathname;
-
     if(currentPathname!== "/messenger")
     {
       setNotefication(true);
@@ -106,10 +103,18 @@ const Navbar = () => {
 
   }, []);
   
+  useEffect(() => {
 
+    if(currentPathname === "/login" || currentPathname === "/signup")
+      setLogin(false);
+    else
+      setLogin(true);
+    
+  }, [currentPathname]);
+  
 
   return (
-    <>
+    <> { login && 
         <Container>
 
           <Stack mb={2}>
@@ -198,7 +203,7 @@ const Navbar = () => {
             )}
           </Stack>
         </Container>
-
+      }
     </>
   );
 };
