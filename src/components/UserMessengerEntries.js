@@ -16,7 +16,7 @@ const UserMessengerEntries = (props) => {
             alignItems="center"
             spacing={2}
             
-            sx={{ height: "40px" }}
+            sx={{ height: "50px" }}
             color="#566376"
           >
             
@@ -24,7 +24,7 @@ const UserMessengerEntries = (props) => {
               <b>Chat</b>
             </Typography>
           </HorizontalStack>
-          <Box sx={{ height: "calc(100vh - 126px)"}}>
+          <Box sx={{ height: "calc(100vh - 136px)"}}>
             <Box sx={{ height: "100%" }}>
               <List sx={{ padding: 0, maxHeight: "100%", overflowY: "auto" ,'&::-webkit-scrollbar': {display:"none"}}}>
                 {props.conversations.map((conversation) => (
@@ -41,15 +41,15 @@ const UserMessengerEntries = (props) => {
         </Stack>
       ) : (
         <Stack
-          sx={{ height: "100%" }}
+          sx={{ height:"80vh"}}
           justifyContent="center"
           alignItems="center"
           spacing={2}
           textAlign="center"
         >
-          <BiSad size={60} />
-          <Typography variant="h5">No Conversations</Typography>
-          <Typography color="#566376" sx={{ maxWidth: "70%" }}>
+          {/* <BiSad color="#A5A7B4" size={60} /> */}
+          <Typography color="#A5A7B4" variant="h5">No Conversations</Typography>
+          <Typography  color="#A5A7B4" sx={{ maxWidth: "70%" }}>
             Click 'Message' on another user's profile to start a conversation
           </Typography>
         </Stack>

@@ -243,11 +243,10 @@ const Messages = (props) => {
       justifyContent="center"
       alignItems="center"
       spacing={2}
-      color="#FDC04D"
     >
-      <AiFillMessage size={80} />
-      <Typography variant="h5">Real Chat</Typography>
-      <Typography color="text.secondary">
+      {/* <AiFillMessage color="#A5A7B4"  size={70} /> */}
+      <Typography color="#A5A7B4" variant="h5">Real Chat</Typography>
+      <Typography color="#A5A7B4">
         Privately message other users on Real
       </Typography>
     </Stack>
