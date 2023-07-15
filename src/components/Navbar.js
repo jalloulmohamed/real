@@ -179,7 +179,7 @@ const Navbar = () => {
                   </>
                 ) : (
                   <>
-                    <Button variant="text" sx={{   py:"4px",  fontSize:"13px",   color: "#18181b"  ,'&:hover': {backgroundColor: '#fff'}}} href="/login">
+                    <Button variant="text" sx={{   py:"4px",  fontSize:"15px",   color: "#18181b"  ,'&:hover': {backgroundColor: '#fff'}}} href="/login">
                       Login
                     </Button>
                     <Button variant="text" sx={{py:"4px", fontSize:"13px", backgroundColor : "#18181b", color: "#FFF", '&:hover': {backgroundColor: '#18181b'}}} href="/signup">
