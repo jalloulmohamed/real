@@ -161,10 +161,10 @@ const Comment = (props) => {
               <>
               <Markdown content={comment.content} />
               {!replying ? (
-                <Typography py={"5px"}  sx={{fontSize:"13px" , cursor:"pointer"}} color={"#4A92FF"}  onClick={handleSetReplying}> reply
+                <Typography py={"5px"}  sx={{fontSize:"13px" , cursor:"pointer"}} color={"#18181b"}  onClick={handleSetReplying}> reply
                 </Typography> 
               ) : (
-                <Typography py={"5px"} color={"#4A92FF"} sx={{fontSize:"13px" , cursor:"pointer"}} onClick={handleSetReplying}> close
+                <Typography py={"5px"} color={"#18181b"} sx={{fontSize:"13px" , cursor:"pointer"}} onClick={handleSetReplying}> close
                 </Typography> 
               )}
               </>

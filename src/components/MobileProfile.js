@@ -62,9 +62,9 @@ const MobileProfile = (props) => {
             {currentUser && user._id === currentUser.userId && (
               <IconButton onClick={props.handleEditing} sx={{ mr: 1 }}>
                 {props.editing ? (
-                  <MdCancel color={"#4A92FF"} />
+                  <MdCancel color={"#18181b"} />
                 ) : (
-                  <FiEdit2 size={18} color={"#4A92FF"} />
+                  <FiEdit2 size={18} color={"#18181b"} />
                 )}
               </IconButton>
             )}

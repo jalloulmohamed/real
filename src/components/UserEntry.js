@@ -15,7 +15,7 @@ const UserEntry = ({ username ,onClose,size}) => {
         <Typography>{username}</Typography>
       </HorizontalStack>
       <Link onClick={onClose} to={"/users/" + username} style={{
-            backgroundColor:"#4A92FF",
+            backgroundColor:"#18181b",
             color:"#fff",
             padding:"5px 19px",
             borderRadius: "5px",
