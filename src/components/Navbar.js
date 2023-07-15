@@ -127,7 +127,7 @@ const Navbar = () => {
               }}
               spacing={!mobile ? 2 : 0}
             >
-              <HorizontalStack alignItems="end"  sx={{ textDecoration: 'none' }}  component={Link}  to={"/"}>
+              <HorizontalStack alignItems="center"  sx={{ textDecoration: 'none' }}  component={Link}  to={"/"}>
                 <Box >
                 <img src="/logo.svg" alt="Image" width={27} />
                 </Box>
