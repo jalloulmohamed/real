@@ -179,10 +179,10 @@ const Navbar = () => {
                   </>
                 ) : (
                   <>
-                    <Button variant="text" sx={{   minWidth: 65  , color: "#18181b" ,'&:hover': {backgroundColor: '#fff'}}} href="/login">
+                    <Button variant="text" sx={{      color: "#18181b"  ,'&:hover': {backgroundColor: '#fff'}}} href="/login">
                       Login
                     </Button>
-                    <Button variant="text" sx={{ minWidth: 80 ,  backgroundColor : "#18181b", color: "#FFF", '&:hover': {backgroundColor: '#18181b'}}} href="/signup">
+                    <Button variant="text" sx={{ backgroundColor : "#18181b", color: "#FFF", '&:hover': {backgroundColor: '#18181b'}}} href="/signup">
                       Sign Up
                     </Button>
                   </>
