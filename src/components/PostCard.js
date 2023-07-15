@@ -138,7 +138,7 @@ const PostCard = (props) => {
   
 
   return (
-    <Card sx={{overflow: "initial", padding: 0, mt:2, border: "none" }} className="post-card">
+    <Card sx={{overflow: "initial", padding: 0, mt:2,  border: "none" }} className="post-card">
       <Box padding={0}   className={preview}>
         <HorizontalStack
           spacing={0}
