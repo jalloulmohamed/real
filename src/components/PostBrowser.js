@@ -160,7 +160,7 @@ const PostBrowser = (props) => {
                 <>No  available</>
               )}
             </Typography>
-            <Button  sx={{color:"#FDC04D"}}  variant="text" size="small" onClick={handleBackToTop}>
+            <Button  sx={{color:"#18181b"}}  variant="text" size="small" onClick={handleBackToTop}>
               Back to top
             </Button>
           </Stack>
@@ -170,7 +170,7 @@ const PostBrowser = (props) => {
           posts.length > 0 && (
             <Stack pt={2} pb={6} alignItems="center" spacing={2}>
               <AiOutlineReload style={{cursor:"pointer", color:"#666666"}}  onClick={fetchPosts}></AiOutlineReload>
-              <Button sx={{color:"#FDC04D"}}  variant="text" size="small" onClick={handleBackToTop}>
+              <Button sx={{color:"#18181b"}}  variant="text" size="small" onClick={handleBackToTop}>
                 Back to top
               </Button>
             </Stack>

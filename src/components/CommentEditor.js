@@ -84,7 +84,7 @@ const CommentEditor = ({ label, comment, addComment, setReplying }) => {
               backgroundColor: "white",
             }}
           >
-            {loading ?  <div style={{fontSize:"12px", color:"#FDC04D"}}>Sending</div> : <RiSendPlaneFill></RiSendPlaneFill>}
+            {loading ?  <div style={{fontSize:"12px", color:"#18181b"}}>Sending</div> : <RiSendPlaneFill></RiSendPlaneFill>}
           </IconButton> */}
         </HorizontalStack>
 

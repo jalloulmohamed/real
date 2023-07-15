@@ -82,7 +82,7 @@ const Comment = (props) => {
           <Box>
             <Typography variant="h6">
               <Link  style={{
-            color:"#FDC04D",
+            color:"#18181b",
             fontWeight: 'bold',
             fontSize:"14px",
             textDecoration: 'none',

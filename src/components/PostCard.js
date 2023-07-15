@@ -169,7 +169,7 @@ const PostCard = (props) => {
                   <Stack sx={{ position: "relative", zIndex: 100 }} ref={containerRef} >
                     <FiMoreHorizontal
                       onClick={handleMouseEnter}
-                      color={"#FDC04D"}
+                      color={"#18181b"}
                       size={25}
                       cursor={"pointer"}
                     ></FiMoreHorizontal>
@@ -226,7 +226,7 @@ const PostCard = (props) => {
                 mt: 1,
                 zIndex: 10,
                 maxWidth: "50%",
-                color: "#FDC04D",
+                color: "#18181b",
               }}
               className="title"
             >

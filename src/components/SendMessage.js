@@ -49,7 +49,7 @@ const SendMessage = (props) => {
             }
           }}
         />
-        <Button  sx={{margin:0 ,color:"#FDC04D" ,padding:0,'&:hover':{backgroundColor:"#fff"}}} onClick={handleSendMessage} disabled={content.length === 0}>
+        <Button  sx={{margin:0 ,color:"#18181b" ,padding:0,'&:hover':{backgroundColor:"#fff"}}} onClick={handleSendMessage} disabled={content.length === 0}>
           <IoSend size={25}></IoSend>
         </Button>
       </HorizontalStack>

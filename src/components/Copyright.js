@@ -7,7 +7,7 @@ const Copyright = () => {
     <Typography  variant="subtitle1" color="text.secondary">
       Copyright © 2023{" "}
       <Link to="/" style={{
-            color:"#FDC04D",
+            color:"#18181b",
             fontSize: 15,
             textDecoration: 'none',
           }}>

@@ -78,7 +78,7 @@ const CommentBrowser = (props) => {
                 <>No comments available</>
               )}
             </Typography>
-            <Button  sx={{color:"#FDC04D"}}  variant="text" size="small" onClick={handleBackToTop}>
+            <Button  sx={{color:"#18181b"}}  variant="text" size="small" onClick={handleBackToTop}>
               Back to top
             </Button>
           </Stack>

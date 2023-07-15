@@ -87,7 +87,7 @@ const MobileProfile = (props) => {
             )}
             {currentUser && user._id !== currentUser.userId && (
               <Box sx={{ mt: 2 }}>
-                <Button variant="" sx={{color:"#FDC04D", ml: 1}}  s={{border: "1px solid #fff"}}  onClick={props.handleMessage}>
+                <Button variant="" sx={{color:"#18181b", ml: 1}}  s={{border: "1px solid #fff"}}  onClick={props.handleMessage}>
                   Send Message
                 </Button>
               </Box>

@@ -63,7 +63,7 @@ const LoginView = () => {
         </Typography>
         <Typography color="text.secondary">
           Don't have an account yet? <Link  style={{
-            color:"#FDC04D",
+            color:"#18181b",
             fontWeight: 'bold',
             fontSize: 15,
             textDecoration: 'none',

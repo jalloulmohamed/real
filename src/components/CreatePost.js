@@ -18,11 +18,11 @@ const CreatePost = () => {
               gap: "0.2rem",
               whiteSpace: "nowrap",
               color:"#fff",
-              backgroundColor: '#FDC04D',
+              backgroundColor: '#18181b',
               border:"none",
               borderRadius:"50px",
               '&:hover': {
-                backgroundColor: '#FDC04D',
+                backgroundColor: '#18181b',
                 border:"none",
               },
               position:"fixed",
