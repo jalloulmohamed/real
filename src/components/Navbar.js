@@ -134,7 +134,7 @@ const Navbar = () => {
                 {/* <Typography
                   sx={{ display: mobile ? "block" : "none" }}
                   variant={navbarWidth ? "h5" : "h5"}
-                  color="#566376"
+                  color="#18181b"
                 >   
                     Real
                 </Typography> */}
@@ -155,23 +155,23 @@ const Navbar = () => {
               <HorizontalStack>
                 {/* {mobile && (
                   <IconButton onClick={handleSearchIcon}>
-                    <IoSearchOutline size={24} color="#566376"/>
+                    <IoSearchOutline size={24} color="#18181b"/>
                   </IconButton>
                 )} */}
                 
 
                 {/* <IconButton component={Link}  to={"/"}>
-                  <AiFillHome size={20} color="#566376" />
+                  <AiFillHome size={20} color="#18181b" />
                 </IconButton> */}
                 {user ? (
                   <>
 
                     <IconButton onClick={handleClickNotification} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
-                      <AiFillMessage size={24} color="#566376" />
+                      <AiFillMessage size={24} color="#18181b" />
 
                     </IconButton>
                     <IconButton  onClick={handleLogout}>
-                      <FiLogOut size={22} color="#566376" ></FiLogOut>
+                      <FiLogOut size={22} color="#18181b" ></FiLogOut>
                     </IconButton>
                     <IconButton component={Link}  to={"/users/" + username}>
                       <UserAvatar width={38} height={38} username={user.username} />
@@ -182,7 +182,7 @@ const Navbar = () => {
                     <Button variant="text" sx={{   minWidth: 65  , color: "#18181b" ,'&:hover': {backgroundColor: '#fff'}}} href="/login">
                       Login
                     </Button>
-                    <Button variant="text" sx={{ minWidth: 80 ,  backgroundColor : "#566376", color: "#FFF", '&:hover': {backgroundColor: '#566376'}}} href="/signup">
+                    <Button variant="text" sx={{ minWidth: 80 ,  backgroundColor : "#18181b", color: "#FFF", '&:hover': {backgroundColor: '#18181b'}}} href="/signup">
                       Sign Up
                     </Button>
                   </>

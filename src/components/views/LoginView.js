@@ -51,7 +51,7 @@ const LoginView = () => {
           </Box>
           <Typography
             variant="h3"
-            color="#566376"
+            color="#18181b"
           >
             {/* <Link to="/" color="inherit"> */}
               eal
@@ -97,7 +97,7 @@ const LoginView = () => {
           />
 
           <ErrorAlert error={serverError} />
-          <Button type="submit" fullWidth variant="contained" sx={{ p:"8px", my: 2  , backgroundColor:"#566376" ,'&:hover':{ backgroundColor:"#566376", } }}>
+          <Button type="submit" fullWidth variant="contained" sx={{ p:"8px", my: 2  , backgroundColor:"#18181b" ,'&:hover':{ backgroundColor:"#18181b", } }}>
             Login
           </Button>
         </Box>

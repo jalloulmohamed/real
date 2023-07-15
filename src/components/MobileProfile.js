@@ -42,13 +42,13 @@ const MobileProfile = (props) => {
               <HorizontalStack spacing={2}>
               <HorizontalStack spacing={1}>
                   <Typography color="#A5A7B4" > Likes</Typography>
-                  <Typography color="#566376">
+                  <Typography color="#18181b">
                     <b>{props.profile.posts.likeCount}</b>
                   </Typography>
               </HorizontalStack>
               <HorizontalStack spacing={1}>
                   <Typography  color="#A5A7B4">Posts</Typography>
-                  <Typography  color="#566376">
+                  <Typography  color="#18181b">
                     <b>{props.profile.posts.count}</b>
                   </Typography>
               </HorizontalStack>

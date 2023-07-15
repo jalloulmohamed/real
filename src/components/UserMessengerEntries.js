@@ -17,7 +17,7 @@ const UserMessengerEntries = (props) => {
             spacing={2}
             
             sx={{ height: "50px" }}
-            color="#566376"
+            color="#18181b"
           >
             
             <Typography sx={{fontSize:"20px"}} size={30}>

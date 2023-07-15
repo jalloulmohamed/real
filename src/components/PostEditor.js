@@ -59,7 +59,7 @@ const PostEditor = () => {
         {user && (
           <HorizontalStack spacing={2}>
             <UserAvatar width={50} height={50} username={user.username} />
-            <Typography color={"#566376"}  variant="h6">
+            <Typography color={"#18181b"}  variant="h6">
                 What's new {user.username}?
             </Typography>
           </HorizontalStack>
