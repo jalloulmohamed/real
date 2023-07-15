@@ -41,10 +41,10 @@ const CreatePost = () => {
               
             }}
           >
-            <FiFeather size={25} color="#fff"  sx={{marginLeft:"5px", 
+            <FiFeather size={25} color="#fff"  sx={{ 
                 display:{
-                md: 'block',
-                xs: 'none',
+                md: 'none',
+                xs: 'block',
               }}}/>
             <Typography sx={{marginLeft:"5px", marginRight :"5px",
                 display:{
