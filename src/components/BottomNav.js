@@ -14,7 +14,7 @@ export const BottomNav = () => {
     const username = user && isLoggedIn().username;
     const [login,setLogin] = useState(true) 
 
-    
+
     const handle = () => {
       const currentPathname = window.location.pathname;
       if(currentPathname === "/login" || currentPathname === "/signup")
@@ -30,7 +30,7 @@ export const BottomNav = () => {
   return (
     <>
       {login && 
-          <BottomNavigation sx={{position:"fixed", display:{xs:'flex',md:"none"} ,backgroundColor:"#fff",left:0,right:0,bottom:0 }}
+          <BottomNavigation sx={{position:"fixed", zIndex:89999, display:{xs:'flex',md:"none"} ,backgroundColor:"#fff",left:0,right:0,bottom:0 }}
           // value={value}
           // onChange={(event, newValue) => {
           //   setValue(newValue);
