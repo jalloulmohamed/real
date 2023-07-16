@@ -176,7 +176,7 @@ const Messages = (props) => {
                 md: '20px',
                 xs: '0',
               }, 
-              py:"10px",
+              py:2,
             }}
           >
             {props.mobile && (
