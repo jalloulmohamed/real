@@ -1,14 +1,16 @@
 import React from 'react'
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import BottomNavigation from '@mui/material/BottomNavigation';
-import {GoHome} from 'react-icons/go';
+import {GoHome,GoHomeFill} from 'react-icons/go';
 import {GoSearch} from 'react-icons/go';
-import {BiNotification} from 'react-icons/bi';
-import { isLoggedIn,  } from "../helpers/authHelper";
-import {BiMessageSquare} from "react-icons/bi";
+import {GrSearch} from 'react-icons/gr';
+
+import {BiNotification,BiSolidNotification} from 'react-icons/bi';
+import { isLoggedIn } from "../helpers/authHelper";
+import {BiMessageSquare,BiSolidMessageSquare} from "react-icons/bi";
 import { Link} from "react-router-dom";
 import { useState, useEffect } from 'react';
-import { FiFeather } from "react-icons/fi";
+import { IoCreateOutline,IoCreate } from "react-icons/io5";
 export const BottomNav = () => {
     const user = isLoggedIn();;
     const username = user && isLoggedIn().username;
@@ -27,20 +29,22 @@ export const BottomNav = () => {
       handle()
       
     }, [user]);
+    const [value, setValue] = useState(0);
+
   return (
     <>
       {login && 
           <BottomNavigation sx={{position:"fixed", zIndex:500, minWidth:0,  display:{xs:'flex',md:"none"} ,justifyContent:"space-between" ,backgroundColor:"#fff",left:0,right:0,bottom:0 }}
-          // value={value}
-          // onChange={(event, newValue) => {
-          //   setValue(newValue);
-          // }}
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
         >
-          <BottomNavigationAction sx={{px:0,minWidth:0}} component={Link} to={"/"} icon={<GoHome size={25} color='#18181b' />} />
-          <BottomNavigationAction sx={{px:0,minWidth:0}} icon={<GoSearch size={25} color='#18181b'/>} />
-          <BottomNavigationAction  sx={{px:0,minWidth:0}} component={Link} to={"/posts/create"} icon={<FiFeather size={25} color='#18181b'/>} />
-          <BottomNavigationAction sx={{px:0,minWidth:0}} component={Link} to={"/messenger"} icon={<BiMessageSquare size={25} color='#18181b'/>} />
-          <BottomNavigationAction  sx={{px:0,minWidth:0}}  icon={<BiNotification size={25} color='#18181b'/>} />
+          <BottomNavigationAction sx={{px:0,minWidth:0}} value="home" component={Link} to={"/"} icon={(value === 'home')? <GoHomeFill size={25} color='#18181b'/> : <GoHome size={25} color='#18181b'/> } />
+          <BottomNavigationAction sx={{px:0,minWidth:0}} value="search" icon={(value === 'search')? <GrSearch size={25} color='#18181b'/> : <GoSearch size={25} color='#18181b'/> } />
+          <BottomNavigationAction  sx={{px:0,minWidth:0}} value="post" component={Link} to={"/posts/create"} icon={(value === 'post')? <IoCreate size={25} color='#18181b'/> : <IoCreateOutline size={25} color='#18181b'/> } />
+          <BottomNavigationAction sx={{px:0,minWidth:0}} value="chat" component={Link} to={"/messenger"} icon={(value === 'chat')? <BiSolidMessageSquare size={25} color='#18181b'/> : <BiMessageSquare size={25} color='#18181b'/> } />
+          <BottomNavigationAction  sx={{px:0,minWidth:0}} value="notification"  icon={(value === 'notification')? <BiSolidNotification size={25} color='#18181b'/> : <BiNotification size={25} color='#18181b'/> } />
         </BottomNavigation>
   }
   </>
