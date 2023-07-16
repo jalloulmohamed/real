@@ -32,7 +32,6 @@ import { socket } from "../helpers/socketHelper";
 import { useLocation } from 'react-router-dom';
 import CreatePost from "./CreatePost";
 import {BiSolidNotification} from 'react-icons/bi';
-import { isLoggedIn } from "../helpers/authHelper";
 import {BiSolidMessageSquare} from "react-icons/bi";
 import { IoCreateOutline } from "react-icons/io5"; 
 const Navbar = () => {
