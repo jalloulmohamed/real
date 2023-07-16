@@ -171,7 +171,7 @@ const Navbar = () => {
 
                     </IconButton>
                     <IconButton  sx={{display:{md:"block",xs:"none"}}}  onClick={handleLogout}>
-                      <FiLogOut size={22} color="#18181b" ></FiLogOut>
+                      <FiLogOut size={20} color="#18181b" ></FiLogOut>
                     </IconButton>
                     <IconButton  sx={{display:{md:"block",xs:"none"}}} component={Link}  to={"/users/" + username}>
                       <UserAvatar width={26} height={26} username={user.username} />
