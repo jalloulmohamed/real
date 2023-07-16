@@ -38,7 +38,7 @@ export const BottomNav = () => {
         >
           <BottomNavigationAction  to={"/"} icon={<GoHomeFill size={25} color='#18181b' />} />
           <BottomNavigationAction icon={<GoSearch size={25} color='#18181b'/>} />
-          <BottomNavigationAction  component={Link}  to={"/posts/create"}  icon={<FiFeather  size={22} color="#fff" />} />
+          <BottomNavigationAction  component={Link} size={25} to={"/posts/create"}  icon={<FiFeather  size={30} color="#fff" />} />
           <BottomNavigationAction   icon={<BiNotification size={25} color='#18181b'/>} />
           <BottomNavigationAction  component={Link}  to={"/users/" + username}  icon={<UserAvatar width={30} height={30}  />} />
         </BottomNavigation>
