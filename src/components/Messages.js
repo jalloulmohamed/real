@@ -176,7 +176,8 @@ const Messages = (props) => {
                 md: '20px',
                 xs: '0',
               }, 
-              my:2
+              my:2,
+              borderBottom:"1px solid #ffff"
 
             }}
           >
