@@ -2,6 +2,7 @@ import { Avatar } from "@mui/material";
 import React from "react";
 
 const UserAvatar = ({ username, height, width }) => {
+  const len = username.lenth();
   return (
     <Avatar
       sx={{
@@ -9,7 +10,7 @@ const UserAvatar = ({ username, height, width }) => {
         width: width,
         backgroundColor: "#dddddd",
       }}
-      src={"https://robohash.org/" + username+ "?set=set5" }
+      src={"https://xsgames.co/randomusers/assets/avatars/male/" + len + ".jpg" }
     />
   );
 };
