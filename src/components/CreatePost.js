@@ -27,6 +27,10 @@ const CreatePost = () => {
               },
               position:"fixed",
               bottom:{
+                xs:65,
+                md:16,
+              },
+              right:{
                 xs:"10%",
                 md:16,
               },
