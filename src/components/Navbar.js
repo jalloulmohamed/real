@@ -128,11 +128,11 @@ const Navbar = () => {
                 pt: 2,
                 pb: 0,
               }}
-              spacing={!mobile ? 2 : 0}
+
             >
-              <HorizontalStack alignItems="center"  sx={{ textDecoration: 'none' }}  component={Link}  to={"/"}>
+              <HorizontalStack alignItems="center"  sx={{ textDecoration: 'none' }} >
                  
-                <img src="/logo.svg" alt="Image" width={27} />
+                <img src="/logo.svg" alt="Image" width={27}  component={Link}  to={"/"}/>
               
                 {/* <Typography
                   sx={{ display: mobile ? "block" : "none" }}
@@ -155,7 +155,7 @@ const Navbar = () => {
                 </Box>
               )} */}
 
-              <HorizontalStack>
+              <HorizontalStack  >
                 {/* {mobile && (
                   <IconButton onClick={handleSearchIcon}>
                     <IoSearchOutline size={24} color="#18181b"/>
@@ -169,11 +169,11 @@ const Navbar = () => {
                 {user ? (
                   <>
 
-                    <IconButton   sx={{display:{md:"block",xs:"none"}}} onClick={handleClickNotification} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
-                      <AiFillMessage size={22} color="#18181b" />
+                    <IconButton   sx={{display:{md:"flex",xs:"none"}}} onClick={handleClickNotification} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
+                      <AiFillMessage color="#18181b" />
                     </IconButton>
-                    <IconButton  sx={{display:{md:"block",xs:"none"}}}  onClick={handleLogout}>
-                      <FiLogOut size={20} color="#18181b" ></FiLogOut>
+                    <IconButton  sx={{display:{md:"flex",xs:"none"}}}  onClick={handleLogout}>
+                      <FiLogOut color="#18181b" ></FiLogOut>
                     </IconButton>
                     <IconButton   component={Link}  to={"/users/" + username}>
                       <UserAvatar width={28} height={28} username={user.username} />
@@ -181,12 +181,12 @@ const Navbar = () => {
                   </>
                 ) : (
                   <>
-                    <Button variant="text" sx={{   py:"4px",  fontSize:"15px",   color: "#18181b"  ,'&:hover': {backgroundColor: '#fff'}}} href="/login">
+                    {/* <Button variant="text" sx={{   py:"4px",  fontSize:"15px",   color: "#18181b"  ,'&:hover': {backgroundColor: '#fff'}}} href="/login">
                       Login
                     </Button>
                     <Button variant="text" sx={{py:"4px", fontSize:"13px", backgroundColor : "#18181b", color: "#FFF", '&:hover': {backgroundColor: '#18181b'}}} href="/signup">
                       Sign Up
-                    </Button>
+                    </Button> */}
                   </>
                 )}
               </HorizontalStack>

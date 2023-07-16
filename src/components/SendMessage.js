@@ -50,7 +50,7 @@ const SendMessage = (props) => {
             }
           }}
         />
-        <IconButton size="medium"    onClick={handleSendMessage} disabled={content.length === 0}>
+        <IconButton size="medium"   sx={{marginLeft:0,}}  onClick={handleSendMessage} disabled={content.length === 0}>
           <BiSolidSend  color={"#18181b"}  size={30}></BiSolidSend>
         </IconButton>
       </HorizontalStack>

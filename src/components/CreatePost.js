@@ -1,7 +1,7 @@
 import { Button, Container, IconButton,Typography } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FiFeather } from "react-icons/fi";
+import { IoCreateOutline } from "react-icons/io5";
 import PrivateRoute from "./PrivateRoute";
 import CreatePostView from "./views/CreatePostView";
 import zIndex from "@mui/material/styles/zIndex";
@@ -48,7 +48,7 @@ const CreatePost = () => {
               }
             }}
           >
-            <FiFeather size={22} color="#fff" />
+            <IoCreateOutline size={23} color="#fff" />
             <Typography sx={{marginLeft:"5px", marginRight :"5px",}} >
               New Post</Typography>
           </IconButton>
