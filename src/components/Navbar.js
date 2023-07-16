@@ -175,7 +175,7 @@ const Navbar = () => {
                     <IconButton   component={Link}  to={"/posts/create"}>
                       <IoCreateOutline  />
                     </IconButton>
-                    <IconButton   c>
+                    <IconButton >
                       <BiSolidNotification />
                     </IconButton>
                     <IconButton   sx={{display:{md:"flex",xs:"none"}}} onClick={handleClickNotification} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
