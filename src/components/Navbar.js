@@ -31,9 +31,9 @@ import reactDom from "react-dom";
 import { socket } from "../helpers/socketHelper";
 import { useLocation } from 'react-router-dom';
 import CreatePost from "./CreatePost";
-import {BiSolidNotification} from 'react-icons/bi';
-import {BiSolidMessageSquare} from "react-icons/bi";
-import { IoCreateOutline } from "react-icons/io5"; 
+import {BiNotification,BiSolidNotification} from 'react-icons/bi';
+import {BiMessageSquare,BiSolidMessageSquare} from "react-icons/bi";
+import { IoCreateOutline,IoCreate } from "react-icons/io5"; 
 const Navbar = () => {
   const navigate = useNavigate();
   const user = isLoggedIn();
@@ -175,10 +175,10 @@ const Navbar = () => {
                       <IoCreateOutline size={20}  color="#18181b"/>
                     </IconButton>
                     <IconButton >
-                      <BiSolidNotification size={20} color="#18181b"/>
+                      <BiNotification size={20} color="#18181b"/>
                     </IconButton>
                     <IconButton  sx={{display:{md:"flex",xs:"none"}}} onClick={handleClickNotification} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
-                      <BiSolidMessageSquare size={18}  color="#18181b" />
+                      <BiMessageSquare size={18}  color="#18181b" />
                     </IconButton>
                     <IconButton  sx={{display:{md:"flex",xs:"none"}}}  onClick={handleLogout}>
                       <FiLogOut size={20} color="#18181b" ></FiLogOut>
