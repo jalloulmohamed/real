@@ -26,8 +26,11 @@ const CreatePost = () => {
                 border:"none",
               },
               position:"fixed",
-              bottom:15,
-              right:15,
+              bottom:{
+                xs:65,
+                md:16,
+              },
+              right:16,
               zIndex:999,
               py:{
                 xs:'12px',

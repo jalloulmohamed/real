@@ -31,6 +31,7 @@ import { useEffect, useState } from "react";
 import { BASE_URL } from "./config";
 import { io } from "socket.io-client";
 import Navbar from "./components/Navbar"
+import { BottomNav } from "./components/BottomNav";
 
 function App() {
   initiateSocketConnection();
@@ -40,6 +41,7 @@ function App() {
       <BrowserRouter>
         <CssBaseline />
         <Navbar/>
+        <BottomNav/>
         <Routes  >
           <Route path="/" element={<ExploreView />} />
           <Route path="/posts/:id" element={<PostView />} />
@@ -64,6 +66,7 @@ function App() {
           <Route path="/login" element={<LoginView />} />
           <Route path="/signup" element={<SignupView />} />
         </Routes>
+        
       </BrowserRouter>
     </ThemeProvider>
   );

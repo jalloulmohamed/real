@@ -166,14 +166,14 @@ const Navbar = () => {
                 {user ? (
                   <>
 
-                    <IconButton onClick={handleClickNotification} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
+                    <IconButton   onClick={handleClickNotification} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
                       <AiFillMessage size={22} color="#18181b" />
 
                     </IconButton>
-                    <IconButton  onClick={handleLogout}>
+                    <IconButton  sx={{display:{md:"block",xs:"none"}}}  onClick={handleLogout}>
                       <FiLogOut size={20} color="#18181b" ></FiLogOut>
                     </IconButton>
-                    <IconButton component={Link}  to={"/users/" + username}>
+                    <IconButton  sx={{display:{md:"block",xs:"none"}}} component={Link}  to={"/users/" + username}>
                       <UserAvatar width={26} height={26} username={user.username} />
                     </IconButton>
                   </>
