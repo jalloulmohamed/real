@@ -29,7 +29,7 @@ export const BottomNav = () => {
       handle()
       
     }, [user]);
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState("home");
 
   return (
     <>
