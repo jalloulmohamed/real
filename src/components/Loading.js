@@ -4,7 +4,7 @@ import React from "react";
 const Loading = ({ label }) => {
   return (
     <Stack alignItems="center">
-      <CircularProgress color="#a5a7b4"  size={20} sx={{ my: 1 }} />
+      <CircularProgress color="inherit"  size={20} sx={{ my: 1 }} />
       <Typography color="#18181b" sx={{ mb: 3 }}>
         {label}
       </Typography>
