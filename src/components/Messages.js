@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useRef, useState } from "react";
-import { AiFillBackward, AiFillCaretLeft, AiFillMessage } from "react-icons/ai";
+import { BiLeftArrowAlt} from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { getMessages, sendMessage } from "../api/messages";
 import { isLoggedIn } from "../helpers/authHelper";
@@ -170,15 +170,13 @@ const Messages = (props) => {
         <>
           <HorizontalStack
             alignItems="center"
-            
+            borderBottom="1px solid #f5f5f5"
             sx={{
               paddingLeft: {
                 md: '20px',
                 xs: '0',
               }, 
-              my:2,
-              borderBottom:"1px solid #ffff"
-
+              py:"10px",
             }}
           >
             {props.mobile && (
