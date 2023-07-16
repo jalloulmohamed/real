@@ -41,7 +41,7 @@ function App() {
       <BrowserRouter>
         <CssBaseline />
         <Navbar/>
-        <BottomNav/>
+        
         <Routes  >
           <Route path="/" element={<ExploreView />} />
           <Route path="/posts/:id" element={<PostView />} />
@@ -66,7 +66,7 @@ function App() {
           <Route path="/login" element={<LoginView />} />
           <Route path="/signup" element={<SignupView />} />
         </Routes>
-        
+        <BottomNav/>
       </BrowserRouter>
     </ThemeProvider>
   );
