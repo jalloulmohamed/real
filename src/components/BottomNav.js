@@ -36,10 +36,10 @@ export const BottomNav = () => {
           //   setValue(newValue);
           // }}
         >
-          <BottomNavigationAction  sx={{px:0}}   to={"/"} icon={<GoHomeFill size={25} color='#18181b' />} />
-          <BottomNavigationAction sx={{px:0}} icon={<GoSearch size={25} color='#18181b'/>} />
-          <BottomNavigationAction sx={{px:0}}  icon={<BiNotification size={25} color='#18181b'/>} />
-          <BottomNavigationAction sx={{px:0}} component={Link}  to={"/users/" + username}  icon={<UserAvatar width={30} height={30}  />} />
+          <BottomNavigationAction  to={"/"} icon={<GoHomeFill size={25} color='#18181b' />} />
+          <BottomNavigationAction icon={<GoSearch size={25} color='#18181b'/>} />
+          <BottomNavigationAction   icon={<BiNotification size={25} color='#18181b'/>} />
+          <BottomNavigationAction  component={Link}  to={"/users/" + username}  icon={<UserAvatar width={30} height={30}  />} />
         </BottomNavigation>
   }
   </>
