@@ -31,6 +31,10 @@ import reactDom from "react-dom";
 import { socket } from "../helpers/socketHelper";
 import { useLocation } from 'react-router-dom';
 import CreatePost from "./CreatePost";
+import {BiSolidNotification} from 'react-icons/bi';
+import { isLoggedIn } from "../helpers/authHelper";
+import {BiSolidMessageSquare} from "react-icons/bi";
+import { IoCreateOutline } from "react-icons/io5"; 
 const Navbar = () => {
   const navigate = useNavigate();
   const user = isLoggedIn();
@@ -168,9 +172,14 @@ const Navbar = () => {
                 </IconButton> */}
                 {user ? (
                   <>
-
+                    <IconButton   component={Link}  to={"/posts/create"}>
+                      <IoCreateOutline  />
+                    </IconButton>
+                    <IconButton   c>
+                      <BiSolidNotification />
+                    </IconButton>
                     <IconButton   sx={{display:{md:"flex",xs:"none"}}} onClick={handleClickNotification} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
-                      <AiFillMessage color="#18181b" />
+                      <BiSolidMessageSquare color="#18181b" />
                     </IconButton>
                     <IconButton  sx={{display:{md:"flex",xs:"none"}}}  onClick={handleLogout}>
                       <FiLogOut color="#18181b" ></FiLogOut>
@@ -178,6 +187,7 @@ const Navbar = () => {
                     <IconButton   component={Link}  to={"/users/" + username}>
                       <UserAvatar width={28} height={28} username={user.username} />
                     </IconButton>
+
                   </>
                 ) : (
                   <>

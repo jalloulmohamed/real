@@ -8,9 +8,9 @@ import {GrSearch} from 'react-icons/gr';
 import {BiNotification,BiSolidNotification} from 'react-icons/bi';
 import { isLoggedIn } from "../helpers/authHelper";
 import {BiMessageSquare,BiSolidMessageSquare} from "react-icons/bi";
+import { IoCreateOutline,IoCreate } from "react-icons/io5"; 
 import { Link} from "react-router-dom";
 import { useState, useEffect } from 'react';
-import { IoCreateOutline,IoCreate } from "react-icons/io5";
 export const BottomNav = () => {
     const user = isLoggedIn();;
     const username = user && isLoggedIn().username;

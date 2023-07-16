@@ -30,12 +30,11 @@ const SendMessage = (props) => {
             md: '15px',
             xs: '10px',
           }, 
-        backgroundColor:"#fff"
       }}
       justifyContent="space-between"
       
     >
-      <HorizontalStack>
+      <HorizontalStack >
         <TextField
           onChange={(e) => setContent(e.target.value)}
           label="Send a message..."
