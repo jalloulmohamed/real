@@ -212,7 +212,7 @@ const Messages = (props) => {
                 msOverflowStyle: 'none',
                 backgroundColor:"#FFF5",
                 scrollbarWidth: 'none',height:{
-                 xs: "calc(100vh - 110px)",
+                 xs: "calc(100vh - 115px)",
                  md:"calc(100vh - 210px)",
                 }  }}
                 direction="column-reverse"
