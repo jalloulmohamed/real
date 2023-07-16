@@ -60,7 +60,6 @@ const getUserLikes = async (postId, anchor) => {
           anchor,
         })
     );
-
     return await res.json();
   } catch (err) {
     console.log(err);

@@ -39,7 +39,6 @@ const FindUsers = () => {
       <Stack spacing={2}>
         <HorizontalStack justifyContent="space-between">
           <HorizontalStack>
-            
             <Typography color={"#A5A7B4"}>Find Others</Typography>
           </HorizontalStack>
           <IconButton
@@ -58,7 +57,7 @@ const FindUsers = () => {
         ) : (
           users &&
           users.map((user) => (
-            <UserEntry username={user.username} size={35} key={user.username} />
+            <UserEntry username={user.username} bio={user.biography} size={35} key={user.username} />
           ))
         )}
       </Stack>

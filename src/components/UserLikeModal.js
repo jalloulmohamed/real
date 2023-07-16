@@ -27,8 +27,8 @@ const UserLikeModal = ({ postId, open, setOpen }) => {
     if (userLikes && userLikes.length > 0) {
       anchor = userLikes[userLikes.length - 1].id;
     }
-
     const data = await getUserLikes(postId, anchor);
+    console.log(data)
 
     setLoading(false);
     if (data.success) {
@@ -98,14 +98,14 @@ const UserLikeModal = ({ postId, open, setOpen }) => {
             e.stopPropagation();
         }}
         >
-                <Typography    sx={{textAlign:"center",mb:"15px"} } color="text.secondary" >
+                <Typography    sx={{textAlign:"center",pb:"15px" } } color="text.secondary" >
                     Likes
                 </Typography>
             <Stack>
                 <Stack spacing={2}>
                 {userLikes &&
                     userLikes.map((like) => (
-                    <UserEntry username={like.username}  size={40}  onClose={handleClose} key={like.username} />
+                    <UserEntry username={like.username}  bio={like.biography} size={40}  onClose={handleClose} key={like.username} />
                     ))}
                 </Stack>
                 {loading ? <Loading /> : hasMorePages && <Box py={6}></Box>}
