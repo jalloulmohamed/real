@@ -171,10 +171,10 @@ const Navbar = () => {
                 </IconButton> */}
                 {user ? (
                   <>
-                    <IconButton   component={Link}  to={"/posts/create"}>
+                    <IconButton  sx={{display:{md:"flex",xs:"none"}}} component={Link}  to={"/posts/create"}>
                       <IoCreateOutline size={20}  color="#18181b"/>
                     </IconButton>
-                    <IconButton >
+                    <IconButton sx={{display:{md:"flex",xs:"none"}}}>
                       <BiNotification size={20} color="#18181b"/>
                     </IconButton>
                     <IconButton  sx={{display:{md:"flex",xs:"none"}}} onClick={handleClickNotification} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
