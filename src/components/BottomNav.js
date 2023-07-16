@@ -40,11 +40,11 @@ export const BottomNav = () => {
             setValue(newValue);
           }}
         >
-          <BottomNavigationAction sx={{px:0,minWidth:0}} value="home" component={Link} to={"/"} icon={(value === 'home')? <GoHomeFill size={25} color='#18181b'/> : <GoHome size={25} color='#18181b'/> } />
-          <BottomNavigationAction sx={{px:0,minWidth:0}} value="search" icon={(value === 'search')? <GrSearch size={25} color='#18181b'/> : <GoSearch size={25} color='#18181b'/> } />
-          <BottomNavigationAction  sx={{px:0,minWidth:0}} value="post" component={Link} to={"/posts/create"} icon={(value === 'post')? <IoCreate size={25} color='#18181b'/> : <IoCreateOutline size={25} color='#18181b'/> } />
-          <BottomNavigationAction sx={{px:0,minWidth:0}} value="chat" component={Link} to={"/messenger"} icon={(value === 'chat')? <BiSolidMessageSquare size={25} color='#18181b'/> : <BiMessageSquare size={25} color='#18181b'/> } />
-          <BottomNavigationAction  sx={{px:0,minWidth:0}} value="notification"  icon={(value === 'notification')? <BiSolidNotification size={25} color='#18181b'/> : <BiNotification size={25} color='#18181b'/> } />
+          <BottomNavigationAction sx={{px:0,minWidth:0}} value="home" component={Link} to={"/"} icon={(value === 'home')? <GoHomeFill size={25} color='#18181b'/> : <GoHome size={25} color='#a5a5a5'/> } />
+          <BottomNavigationAction sx={{px:0,minWidth:0}} value="search" icon={(value === 'search')? <GrSearch size={25} color='#18181b'/> : <GoSearch size={25} color='#a5a5a5'/> } />
+          <BottomNavigationAction  sx={{px:0,minWidth:0}} value="post" component={Link} to={"/posts/create"} icon={(value === 'post')? <IoCreate size={25} color='#18181b'/> : <IoCreateOutline size={25} color='#a5a5a5'/> } />
+          <BottomNavigationAction sx={{px:0,minWidth:0}} value="chat" component={Link} to={"/messenger"} icon={(value === 'chat')? <BiSolidMessageSquare size={25} color='#18181b'/> : <BiMessageSquare size={25} color='#a5a5a5'/> } />
+          <BottomNavigationAction  sx={{px:0,minWidth:0}} value="notification"  icon={(value === 'notification')? <BiSolidNotification size={25} color='#18181b'/> : <BiNotification size={25} color='#a5a5a5'/> } />
         </BottomNavigation>
   }
   </>

@@ -176,7 +176,7 @@ const Messages = (props) => {
                 md: '20px',
                 xs: '0',
               }, 
-              py:2,
+              py:"12px",
             }}
           >
             {props.mobile && (
@@ -212,7 +212,7 @@ const Messages = (props) => {
                 msOverflowStyle: 'none',
                 backgroundColor:"#FFF5",
                 scrollbarWidth: 'none',height:{
-                 xs: "calc(100vh - 120px)",
+                 xs: "calc(100vh - 110px)",
                  md:"calc(100vh - 210px)",
                 }  }}
                 direction="column-reverse"
