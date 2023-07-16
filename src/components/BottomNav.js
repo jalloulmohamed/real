@@ -30,7 +30,7 @@ export const BottomNav = () => {
   return (
     <>
       {login && 
-          <BottomNavigation sx={{position:"fixed", zIndex:89999, display:{xs:'flex',md:"none"} ,backgroundColor:"#fff",left:0,right:0,bottom:0 }}
+          <BottomNavigation sx={{position:"fixed", zIndex:89999,  display:{xs:'flex',md:"none"} ,justifyContent:"space-between" ,backgroundColor:"#fff",left:0,right:0,bottom:0 }}
           // value={value}
           // onChange={(event, newValue) => {
           //   setValue(newValue);
