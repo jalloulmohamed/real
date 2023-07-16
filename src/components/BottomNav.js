@@ -8,7 +8,7 @@ import { isLoggedIn,  } from "../helpers/authHelper";
 import UserAvatar from "./UserAvatar";
 import { Link} from "react-router-dom";
 import { useState, useEffect } from 'react';
-
+import { FiFeather } from "react-icons/fi";
 export const BottomNav = () => {
     const user = isLoggedIn();;
     const username = user && isLoggedIn().username;
