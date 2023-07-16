@@ -185,7 +185,7 @@ const Messages = (props) => {
                 onClick={() => props.setConservant(null)}
                 sx={{ padding: 0 ,marginLeft:"15px"}}
               >
-                <AiFillCaretLeft size={18} color="#000"  />
+                <BiLeftArrowAlt size={20} color="#000"  />
               </IconButton>
             )}
             <UserAvatar

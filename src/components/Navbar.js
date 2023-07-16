@@ -171,7 +171,6 @@ const Navbar = () => {
 
                     <IconButton   sx={{display:{md:"block",xs:"none"}}} onClick={handleClickNotification} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
                       <AiFillMessage size={22} color="#18181b" />
-
                     </IconButton>
                     <IconButton  sx={{display:{md:"block",xs:"none"}}}  onClick={handleLogout}>
                       <FiLogOut size={20} color="#18181b" ></FiLogOut>
