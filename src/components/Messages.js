@@ -170,7 +170,7 @@ const Messages = (props) => {
         <>
           <HorizontalStack
             alignItems="center"
-            spacing={2}
+            
             sx={{
               paddingLeft: {
                 md: '20px',
@@ -183,9 +183,9 @@ const Messages = (props) => {
             {props.mobile && (
               <IconButton
                 onClick={() => props.setConservant(null)}
-                sx={{ padding: 0 ,marginLeft:"16px"}}
+                sx={{ padding: 0 ,marginLeft:"15px"}}
               >
-                <AiFillCaretLeft />
+                <AiFillCaretLeft size={18} color="#000"  />
               </IconButton>
             )}
             <UserAvatar
@@ -193,9 +193,10 @@ const Messages = (props) => {
               height={30}
               width={30}
             />
-            <Typography>
+            <Typography >
               <Link  style={{
             color:"#000",
+
             fontWeight: 'bold',
             fontSize: 15,
             textDecoration: 'none',

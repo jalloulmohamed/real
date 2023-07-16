@@ -1,13 +1,14 @@
 import {
   Button,
   FormControl,
+  IconButton,
   InputAdornment,
   InputLabel,
   OutlinedInput,
   Stack,
   TextField,
 } from "@mui/material";
-import {IoSend} from "react-icons/io5"
+import {BiSolidSend} from "react-icons/bi"
 import React, { useEffect, useState } from "react";
 import { sendMessage } from "../api/messages";
 import { isLoggedIn } from "../helpers/authHelper";
@@ -49,9 +50,9 @@ const SendMessage = (props) => {
             }
           }}
         />
-        <Button  sx={{margin:0 ,color:"#18181b" ,padding:0,'&:hover':{backgroundColor:"#fff"}}} onClick={handleSendMessage} disabled={content.length === 0}>
-          <IoSend size={25}></IoSend>
-        </Button>
+        <IconButton size="medium"    onClick={handleSendMessage} disabled={content.length === 0}>
+          <BiSolidSend  color={"#18181b"}  size={30}></BiSolidSend>
+        </IconButton>
       </HorizontalStack>
     </Stack>
   );

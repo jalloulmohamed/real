@@ -124,7 +124,7 @@ const MessengerView = () => {
                 </Box>
               </Grid>
             ) : (
-              <Grid  xs={12} sx={{ height: "100%"  ,position:"absolute", top:0 ,right:0 ,left:0 ,bottom:0,bgcolor:"#ffff"}}>
+              <Grid  xs={12} sx={{ height: "100%" ,zIndex:501 ,position:"absolute", top:0 ,right:0 ,left:0 ,bottom:0,bgcolor:"#ffff"}}>
                 <Messages
                   conservant={conservant}
                   conversations={conversations}
