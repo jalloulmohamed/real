@@ -35,23 +35,21 @@ const CreatePost = () => {
               right:16,
               zIndex:999,
               py:{
-                xs:'12px',
+               
                 md: '7px'
               },
               px:{
                 md:'12px',
-                xs:'12px',
+                
               },
-
-              
+              display:{
+                md: 'block',
+                xs: 'none',
+              }
             }}
           >
             <FiFeather size={22} color="#fff" />
-            <Typography sx={{marginLeft:"5px", marginRight :"5px",
-                display:{
-                md: 'block',
-                xs: 'none',
-              }}} >
+            <Typography sx={{marginLeft:"5px", marginRight :"5px",}} >
               New Post</Typography>
           </IconButton>
     </Container>
@@ -59,3 +57,5 @@ const CreatePost = () => {
 };
 
 export default CreatePost;
+
+
