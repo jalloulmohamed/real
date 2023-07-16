@@ -130,9 +130,9 @@ const Navbar = () => {
               }}
 
             >
-              <HorizontalStack alignItems="center"  sx={{ textDecoration: 'none' }} >
+              <HorizontalStack alignItems="center"  sx={{ textDecoration: 'none' }} component={Link}  to={"/"}>
                  
-                <img src="/logo.svg" alt="Image" width={27}  component={Link}  to={"/"}/>
+                <img src="/logo.svg" alt="Image" width={27}  />
               
                 {/* <Typography
                   sx={{ display: mobile ? "block" : "none" }}
