@@ -126,7 +126,7 @@ const PostBrowser = (props) => {
               sorts={sorts}
             /> */}
             <div></div>
-            {props.createPost && <CreatePost />}
+            {/* {props.createPost && <CreatePost />} */}
           </HorizontalStack>
         </Card>
 
