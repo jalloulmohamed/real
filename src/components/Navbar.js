@@ -172,15 +172,15 @@ const Navbar = () => {
                 {user ? (
                   <>
                     <IconButton   component={Link}  to={"/posts/create"}>
-                      <IoCreateOutline  />
+                      <IoCreateOutline size={20}  color="#18181b"/>
                     </IconButton>
                     <IconButton >
-                      <BiSolidNotification />
+                      <BiSolidNotification size={20} color="#18181b"/>
                     </IconButton>
-                    <IconButton   sx={{display:{md:"flex",xs:"none"}}} onClick={handleClickNotification} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
+                    <IconButton  size={18} sx={{display:{md:"flex",xs:"none"}}} onClick={handleClickNotification} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
                       <BiSolidMessageSquare color="#18181b" />
                     </IconButton>
-                    <IconButton  sx={{display:{md:"flex",xs:"none"}}}  onClick={handleLogout}>
+                    <IconButton size={20} sx={{display:{md:"flex",xs:"none"}}}  onClick={handleLogout}>
                       <FiLogOut color="#18181b" ></FiLogOut>
                     </IconButton>
                     <IconButton   component={Link}  to={"/users/" + username}>
