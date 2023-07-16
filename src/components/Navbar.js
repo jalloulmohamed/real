@@ -177,11 +177,11 @@ const Navbar = () => {
                     <IconButton >
                       <BiSolidNotification size={20} color="#18181b"/>
                     </IconButton>
-                    <IconButton  size={18} sx={{display:{md:"flex",xs:"none"}}} onClick={handleClickNotification} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
-                      <BiSolidMessageSquare color="#18181b" />
+                    <IconButton  sx={{display:{md:"flex",xs:"none"}}} onClick={handleClickNotification} className={notefication ? 'notificationDot' : ''} component={Link} to={"/messenger"}>
+                      <BiSolidMessageSquare size={18}  color="#18181b" />
                     </IconButton>
-                    <IconButton size={20} sx={{display:{md:"flex",xs:"none"}}}  onClick={handleLogout}>
-                      <FiLogOut color="#18181b" ></FiLogOut>
+                    <IconButton  sx={{display:{md:"flex",xs:"none"}}}  onClick={handleLogout}>
+                      <FiLogOut size={20} color="#18181b" ></FiLogOut>
                     </IconButton>
                     <IconButton   component={Link}  to={"/users/" + username}>
                       <UserAvatar width={28} height={28} username={user.username} />
