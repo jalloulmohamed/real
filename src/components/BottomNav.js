@@ -26,21 +26,21 @@ export const BottomNav = () => {
     useEffect(() => {
       handle()
       
-    }, [window.location.pathname]);
+    }, [user]);
   return (
     <>
       {login && 
-          <BottomNavigation sx={{position:"fixed", zIndex:89999,  display:{xs:'flex',md:"none"} ,justifyContent:"space-between" ,backgroundColor:"#fff",left:0,right:0,bottom:0 }}
+          <BottomNavigation sx={{position:"fixed", zIndex:89999, minWidth:0,  display:{xs:'flex',md:"none"} ,justifyContent:"space-between" ,backgroundColor:"#fff",left:0,right:0,bottom:0 }}
           // value={value}
           // onChange={(event, newValue) => {
           //   setValue(newValue);
           // }}
         >
-          <BottomNavigationAction  to={"/"} icon={<GoHomeFill size={25} color='#18181b' />} />
-          <BottomNavigationAction icon={<GoSearch size={25} color='#18181b'/>} />
-          <BottomNavigationAction  component={Link}  to={"/posts/create"}  icon={<FiFeather  size={30} color="#fff" />} />
-          <BottomNavigationAction   icon={<BiNotification size={25} color='#18181b'/>} />
-          <BottomNavigationAction  component={Link}  to={"/users/" + username}  icon={<UserAvatar width={30} height={30}  />} />
+          <BottomNavigationAction sx={{px:0}} to={"/"} icon={<GoHomeFill size={25} color='#18181b' />} />
+          <BottomNavigationAction sx={{px:0}} icon={<GoSearch size={25} color='#18181b'/>} />
+          <BottomNavigationAction  sx={{px:0}} icon={<FiFeather size={25} color='#18181b'/>} />
+          <BottomNavigationAction  sx={{px:0}} icon={<BiNotification size={25} color='#18181b'/>} />
+          <BottomNavigationAction  sx={{px:0}} component={Link}  to={"/users/" + username}  icon={<UserAvatar width={30} height={30}  />} />
         </BottomNavigation>
   }
   </>

@@ -92,6 +92,13 @@ const Navbar = () => {
       }
     }
   };
+  const handle = async () => {
+    const currentPathname = window.location.pathname;
+    if(currentPathname === "/login" || currentPathname === "/signup")
+      setLogin(false);
+    else
+      setLogin(true);
+  };
   
   const handleClickNotification = () => {
     setNotefication(false);
@@ -103,11 +110,7 @@ const Navbar = () => {
   }, []);
   
   useEffect(() => {
-    const currentPathname = window.location.pathname;
-    if(currentPathname === "/login" || currentPathname === "/signup")
-      setLogin(false);
-    else
-      setLogin(true);
+    handle()
     
   }, [window.location.pathname]);
   
