@@ -43,7 +43,7 @@ const CreatePost = () => {
                 
               },
               display:{
-                md: 'block',
+                md: 'flex',
                 xs: 'none',
               }
             }}
