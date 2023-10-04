@@ -70,12 +70,17 @@ const PostEditor = () => {
           <TextField
             fullWidth
             label="Title"
-           
             name="title"
             margin="normal"
             onChange={handleChange}
             error={errors.title !== undefined}
             helperText={errors.title}
+            sx={{
+              border: 'none', // Remove the border
+              '& .MuiInput-underline:before': {
+                borderBottom: 'none', // Remove the underline
+              },
+            }}
           />
           <TextField
             fullWidth
@@ -87,6 +92,12 @@ const PostEditor = () => {
             onChange={handleChange}
             error={errors.content !== undefined}
             helperText={errors.content}
+            sx={{
+              border: 'none', // Remove the border
+              '& .MuiInput-underline:before': {
+                borderBottom: 'none', // Remove the underline
+              },
+            }}
         
           />
           <ErrorAlert error={serverError} />
@@ -97,6 +108,12 @@ const PostEditor = () => {
             disabled={loading}
             sx={{
               mt: 2,
+              backgroundColor: '#0000', // Set your desired background color
+              color: "#fff",
+              '&:hover': {
+                backgroundColor: '#0000',
+                color: "#fff" ,// Set your desired hover background color
+              },
             }}
           >
             {loading ? <>Submitting</> : <>Submit</>}
