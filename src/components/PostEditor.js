@@ -108,10 +108,10 @@ const PostEditor = () => {
             disabled={loading}
             sx={{
               mt: 2,
-              backgroundColor: '#0000', // Set your desired background color
+              backgroundColor: '#000', // Set your desired background color
               color: "#fff",
               '&:hover': {
-                backgroundColor: '#0000',
+                backgroundColor: '#000',
                 color: "#fff" ,// Set your desired hover background color
               },
             }}
